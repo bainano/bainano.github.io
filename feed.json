@@ -1,27 +1,13 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "bainan",
+    "title": "白楠",
     "description": "",
-    "home_page_url": "https://bainano.github.io/bainano.github.io",
-    "feed_url": "https://bainano.github.io/bainano.github.io/feed.json",
+    "home_page_url": "https://bainano.github.io",
+    "feed_url": "https://bainano.github.io/feed.json",
     "user_comment": "",
     "author": {
         "name": "bainan"
     },
     "items": [
-        {
-            "id": "https://bainano.github.io/bainano.github.io/ni-hao-shi-jie.html",
-            "url": "https://bainano.github.io/bainano.github.io/ni-hao-shi-jie.html",
-            "title": "你好世界",
-            "summary": "我的第一篇博客",
-            "content_html": "<p>我的第一篇博客</p>",
-            "author": {
-                "name": "bainan"
-            },
-            "tags": [
-            ],
-            "date_published": "2024-03-21T05:50:22+08:00",
-            "date_modified": "2024-03-21T05:50:22+08:00"
-        }
     ]
 }
