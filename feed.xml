@@ -3,10 +3,31 @@
     <title>白楠</title>
     <link href="https://bainano.github.io/feed.xml" rel="self" />
     <link href="https://bainano.github.io" />
-    <updated>1970-01-01T08:00:00+08:00</updated>
+    <updated>2024-03-22T21:52:33+08:00</updated>
     <author>
         <name>bainan</name>
     </author>
     <id>https://bainano.github.io</id>
 
+    <entry>
+        <title>我的第一篇博客</title>
+        <author>
+            <name>bainan</name>
+        </author>
+        <link href="https://bainano.github.io/wo-de-di-yi-pian-bo-ke.html"/>
+        <id>https://bainano.github.io/wo-de-di-yi-pian-bo-ke.html</id>
+            <category term="谈"/>
+
+        <updated>2024-03-22T21:52:33+08:00</updated>
+            <summary>
+                <![CDATA[
+                    --
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>--</p>
+            ]]>
+        </content>
+    </entry>
 </feed>
