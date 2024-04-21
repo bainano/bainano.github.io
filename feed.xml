@@ -3,49 +3,12 @@
     <title>白楠</title>
     <link href="https://bainano.github.io/feed.xml" rel="self" />
     <link href="https://bainano.github.io" />
-    <updated>2024-04-21T22:58:55+08:00</updated>
+    <updated>2024-04-21T13:25:16+08:00</updated>
     <author>
         <name>bainan</name>
     </author>
     <id>https://bainano.github.io</id>
 
-    <entry>
-        <title>gitalk</title>
-        <author>
-            <name>bainan</name>
-        </author>
-        <link href="https://bainano.github.io/gitalk.html"/>
-        <id>https://bainano.github.io/gitalk.html</id>
-
-        <updated>2024-04-21T22:57:31+08:00</updated>
-            <summary></summary>
-        <content type="html">
-            <![CDATA[
-                <div id="gitalk-container/" style="border: 0;"></div>
-<p>
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js/" style="border: 0;"></script>
-<script>
-  const gitalk = new Gitalk({
-    clientID: '{{ .db4ae95171ac1f5f05b4 }}',
-    clientSecret: '{{ .9275888163e91520ee3bf89f67ac49faf4b71306 }}',
-    repo: '{{ .gitalk }}',
-    owner: '{{ .bainano }}',
-    admin: ['{{ .bainano }}'],
-    id: location.pathname, // Ensure uniqueness and length less than 50
-    distractionFreeMode: false // Facebook-like distraction free mode
-  });
-  (function() {
-    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-      document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
-      return;
-    }
-    gitalk.render('gitalk-container');
-  })();
-</script>
-</p>
-            ]]>
-        </content>
-    </entry>
     <entry>
         <title>小撒探访小米汽车工厂 看看一辆小米SU7是如何诞生的</title>
         <author>
