@@ -1,6 +1,6 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "BAINANO",
+    "title": "白楠哦",
     "description": "",
     "home_page_url": "https://bainano.github.io",
     "feed_url": "https://bainano.github.io/feed.json",
@@ -10,18 +10,18 @@
     },
     "items": [
         {
-            "id": "https://bainano.github.io/ni-hao-2.html",
-            "url": "https://bainano.github.io/ni-hao-2.html",
+            "id": "https://bainano.github.io/ni-hao.html",
+            "url": "https://bainano.github.io/ni-hao.html",
             "title": "你好",
             "summary": "你好",
-            "content_html": "<p>你好</p>",
+            "content_html": "\n  <p>\n    你好\n  </p>",
             "author": {
                 "name": "bainan"
             },
             "tags": [
             ],
-            "date_published": "2024-08-17T09:10:01+08:00",
-            "date_modified": "2024-08-17T09:22:14+08:00"
+            "date_published": "2024-08-17T10:57:17+08:00",
+            "date_modified": "2024-08-17T10:57:17+08:00"
         }
     ]
 }
