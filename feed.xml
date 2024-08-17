@@ -1,53 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
-    <title>白楠</title>
-    <link href="https://bainano.github.io/feed.xml" rel="self" />
-    <link href="https://bainano.github.io" />
-    <updated>2024-04-21T13:25:16+08:00</updated>
+    <title>bainano</title>
+    <link href="https:// bainano.github.io/bainano.github.io/feed.xml" rel="self" />
+    <link href="https:// bainano.github.io/bainano.github.io" />
+    <updated>2024-08-17T09:10:01+08:00</updated>
     <author>
         <name>bainan</name>
     </author>
-    <id>https://bainano.github.io</id>
+    <id>https:// bainano.github.io/bainano.github.io</id>
 
     <entry>
-        <title>小撒探访小米汽车工厂 看看一辆小米SU7是如何诞生的</title>
+        <title>你好</title>
         <author>
             <name>bainan</name>
         </author>
-        <link href="https://bainano.github.io/yan-bao-jian-cao.html"/>
-        <id>https://bainano.github.io/yan-bao-jian-cao.html</id>
+        <link href="https:// bainano.github.io/bainano.github.io/ni-hao-2.html"/>
+        <id>https:// bainano.github.io/bainano.github.io/ni-hao-2.html</id>
 
-        <updated>2024-04-20T21:00:53+08:00</updated>
+        <updated>2024-08-17T09:10:01+08:00</updated>
             <summary></summary>
-        <content type="html">
-            <![CDATA[
-                <figure class="post__video"><video loading="lazy" width="640" height="360" controls="controls" data-mce-fragment="1">
-<source src="https://v26-default.365yg.com/ce2a5b8cb0c7d3888302227b9cbd6961/6624aafa/video/tos/cn/tos-cn-ve-15/okfIL49EnIsyyiRfAheoai75zCbhMQBQDvALBO/?a=2011&amp;ch=0&amp;cr=0&amp;dr=0&amp;lr=unwatermarked&amp;net=5&amp;cd=0%7C0%7C0%7C0&amp;cv=1&amp;br=6234&amp;bt=6234&amp;cs=0&amp;ds=4&amp;ft=aT_7TQQqUnXfmoZmo0OW_QYaUqiXUAz7xVJEE6H_DvPD-Ipz&amp;mime_type=video_mp4&amp;qs=0&amp;rc=NzdnZTRnNDo1OGY3NDxkOUBpanNrNDs6Znh2cjMzNGkzM0AuNGMzLzIxX2ExMDFhNF5jYSNwLmBlcjRfY2JgLS1kLWFzcw%3D%3D&amp;btag=e00030000&amp;dy_q=1713675151&amp;feature_id=59cb2766d89ae6284516c6a254e9fb61&amp;l=202404211252318C772244BF38ECB89BFC" /></video></figure>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>乡愁</title>
-        <author>
-            <name>bainan</name>
-        </author>
-        <link href="https://bainano.github.io/xiang-chou.html"/>
-        <id>https://bainano.github.io/xiang-chou.html</id>
-
-        <updated>2024-04-19T00:14:59+08:00</updated>
-            <summary>
-                <![CDATA[
-                    小时候 乡愁是一枚小小的邮票 我在这头 母亲在那头 长大后 乡愁是一张窄窄的船票 我在这头 新娘在那头 后来啊 乡愁是一方矮矮的坟墓 我在外头 母亲在里头&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <hr>
-<blockquote>
-<p>小时候<br>乡愁是一枚小小的邮票<br>我在这头<br>母亲在那头<br><br>长大后<br>乡愁是一张窄窄的船票<br>我在这头<br>新娘在那头<br><br>后来啊<br>乡愁是一方矮矮的坟墓<br>我在外头<br>母亲在里头<br><br>而现在<br>乡愁是一湾浅浅的海峡<br>我在这头<br>大陆在那头</p>
-</blockquote>
-<p class="align-right">余光中  《乡愁》</p>
-            ]]>
-        </content>
+        <content></content>
     </entry>
 </feed>

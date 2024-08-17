@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https:// bainano.github.io/bainano.github.io/sitemap.xml
