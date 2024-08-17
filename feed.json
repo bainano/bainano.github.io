@@ -6,7 +6,7 @@
     "feed_url": "https://bainano.github.io/feed.json",
     "user_comment": "",
     "author": {
-        "name": "bainan"
+        "name": "白楠"
     },
     "items": [
         {
@@ -16,7 +16,7 @@
             "summary": "你好",
             "content_html": "\n  <p>\n    你好\n  </p>",
             "author": {
-                "name": "bainan"
+                "name": "白楠"
             },
             "tags": [
             ],
