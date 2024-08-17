@@ -13,13 +13,15 @@
             "id": "https:// bainano.github.io/bainano.github.io/ni-hao-2.html",
             "url": "https:// bainano.github.io/bainano.github.io/ni-hao-2.html",
             "title": "你好",
+            "summary": "你好",
+            "content_html": "<p>你好</p>",
             "author": {
                 "name": "bainan"
             },
             "tags": [
             ],
             "date_published": "2024-08-17T09:10:01+08:00",
-            "date_modified": "2024-08-17T09:10:01+08:00"
+            "date_modified": "2024-08-17T09:22:14+08:00"
         }
     ]
 }
