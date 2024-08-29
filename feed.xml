@@ -3,7 +3,7 @@
     <title>白楠哦</title>
     <link href="https://bainano.github.io/feed.xml" rel="self" />
     <link href="https://bainano.github.io" />
-    <updated>2024-08-17T10:57:17+08:00</updated>
+    <updated>2024-08-18T19:42:44+08:00</updated>
     <author>
         <name>白楠</name>
     </author>
@@ -17,19 +17,8 @@
         <link href="https://bainano.github.io/ni-hao.html"/>
         <id>https://bainano.github.io/ni-hao.html</id>
 
-        <updated>2024-08-17T10:57:17+08:00</updated>
-            <summary>
-                <![CDATA[
-                    你好
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                
-  <p>
-    你好
-  </p>
-            ]]>
-        </content>
+        <updated>2024-08-18T19:42:44+08:00</updated>
+            <summary></summary>
+        <content></content>
     </entry>
 </feed>
