@@ -25,6 +25,15 @@
 	xmlns:wp="http://wordpress.org/export/1.2/"
 >
 
+<channel>
+	<title>wp</title>
+	<link>http://localhost</link>
+	<description></description>
+	<pubDate>Mon, 10 Mar 2025 17:26:17 +0000</pubDate>
+	<language>zh-Hans</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>http://localhost</wp:base_site_url>
+	<wp:base_blog_url>http://localhost</wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[wp]]></wp:author_login><wp:author_email><![CDATA[2066856271@qq.com]]></wp:author_email><wp:author_display_name><![CDATA[wp]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
