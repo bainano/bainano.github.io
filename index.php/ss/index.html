@@ -105,7 +105,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
     document.getElementById('searchInput').addEventListener('input', function () {
         var searchKeyword = this.value.toLowerCase();
 		<!-- your_links.xml &#25442;&#25104;&#20320;&#30340; xml &#21517;&#31216; -->
-        fetch('your_links.xml')
+        fetch('sitemap.xml')
             .then(response => response.text())
             .then(data => {
                 var parser = new DOMParser();
