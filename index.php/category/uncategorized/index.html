@@ -106,97 +106,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
 <h2 class="wp-block-heading"></h2>
 </div></div>
-</section><section id="block-8" class="widget widget_block"><meta name="algolia-site-verification" content="1F6F418456655CFD"></section><section id="block-12" class="widget widget_block">
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Example</title>
-    <style>
-        #searchInput {
-            margin-bottom: 10px;
-        }
-
-        .searchResults {
-            position: absolute;
-            top: 60px; /* &#35843;&#25972;&#24377;&#31383;&#30340;&#22402;&#30452;&#20301;&#32622; */
-            left: 10px;
-            z-index: 999; /* &#30830;&#20445;&#24377;&#31383;&#22312;&#26368;&#19978;&#23618; */
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            display: none;
-        }
-
-        .searchResults li {
-            list-style-type: none;
-        }
-    </style>
-
-
-<!-- hysousuo -->
-<!-- &#25628;&#32034;&#26694; -->
- <form>
- <input type="text" id="searchInput" placeholder="Search Keywords or Catalog Number">
- </form>
- <!-- &#25628;&#32034;&#32467;&#26524; -->
- <ul class="searchResults">
-     <!-- &#25628;&#32034;&#32467;&#26524;&#23558;&#20250;&#21160;&#24577;&#21152;&#36733;&#21040;&#36825;&#37324; -->
- </ul>
-
- <!-- JavaScript &#20195;&#30721; -->
- <script>
-     const searchInput = document.getElementById('searchInput');
-     const searchResultsContainer = document.querySelector('.searchResults');
-
-     searchInput.addEventListener('input', function () {
-         const searchKeyword = this.value.toLowerCase();
-
-         // &#28165;&#31354;&#20043;&#21069;&#30340;&#25628;&#32034;&#32467;&#26524;
-         searchResultsContainer.innerHTML = '';
-
-         if (searchKeyword.trim() === '') {
-             // &#22914;&#26524;&#25628;&#32034;&#20851;&#38190;&#23383;&#20026;&#31354;&#65292;&#38544;&#34255;&#24377;&#31383;&#24182;&#36820;&#22238;
-             searchResultsContainer.style.display = 'none';
-             return;
-         }
-
-         fetch('sitemap.xml')
-             .then(response => response.text())
-             .then(data => {
-                 const parser = new DOMParser();
-                 const xmlDoc = parser.parseFromString(data, 'application/xml');
-                 const links = xmlDoc.querySelectorAll('link');
-
-                 let hasResults = false;
-
-                 links.forEach(link => {
-                     const url = link.querySelector('url').textContent.toLowerCase();
-                     const title = link.querySelector('title').textContent.toLowerCase();
-
-                     if (title.includes(searchKeyword) || url.includes(searchKeyword)) {
-                         const li = document.createElement('li');
-                         li.className = 'aurl';
-                         li.innerHTML = `<a href="${url}" data-lastfrom="" title="${title}">${title}`;
-                         searchResultsContainer.appendChild(li);
-                         hasResults = true;
-                     }
-                 });
-
-                 // &#26681;&#25454;&#25628;&#32034;&#32467;&#26524;&#26174;&#31034;&#25110;&#38544;&#34255;&#24377;&#31383;
-                 searchResultsContainer.style.display = hasResults ? 'block' : 'none';
-             })
-             .catch(error => console.error('Error fetching XML:', error));
-     });
-
-     // &#30417;&#21548;&#36755;&#20837;&#26694;&#22833;&#21435;&#28966;&#28857;&#20107;&#20214;&#65292;&#38544;&#34255;&#25628;&#32034;&#32467;&#26524;&#24377;&#31383;
-     searchInput.addEventListener('blur', function () {
-         // &#20351;&#29992; setTimeout &#30830;&#20445;&#28857;&#20987;&#25628;&#32034;&#32467;&#26524;&#26102;&#33021;&#35302;&#21457;&#38142;&#25509;
-         setTimeout(() => {
-             searchResultsContainer.style.display = 'none';
-         }, 200);
-     });
- </script></section>	</aside><!-- .widget-area -->
+</section><section id="block-8" class="widget widget_block"><meta name="algolia-site-verification" content="1F6F418456655CFD"></section>	</aside><!-- .widget-area -->
 
 	
 	<footer id="colophon" class="site-footer">
@@ -225,7 +135,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 </script>
 <script src="/wp-content/themes/twentytwentyone/assets/js/responsive-embeds.js?ver=2.4" id="twenty-twenty-one-responsive-embeds-script-js"></script>
 
-
-
-</body></html>
+</body>
+</html>
 <!-- Powered by Staatic (https://staatic.com/) -->
