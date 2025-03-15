@@ -200,7 +200,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u5c55\u5f0
 
 	<div class="entry-content">
 		
-<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
 
 
 
@@ -214,7 +214,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u5c55\u5f0
 
 
 
-    <div id="demo"></div>
+    <div id="demo" style="height: max-content;"></div>
     <script src="https://bainano.github.io/wp-content/uploads/2025/03/APlayer.min_.js"></script>
     <script>
         var demo = new APlayer(
@@ -223,12 +223,14 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u5c55\u5f0
             showlrc: false,
             fixed: false,
             mini: false,
+            lrcType: 3,
             audio: [
                 {
                     title: '有爱就不怕',
                     author: '庄心妍',
                     url: '/wp-content/uploads/2025/03/庄心妍-有爱就不怕.mp3',
                     pic: '/wp-content/uploads/2025/03/庄心妍-有爱就不怕-mp3-image-768x768.jpg',
+                    lrc: '/wp-content/uploads/2025/03/有爱就不怕-庄心妍.lrc'
 
                 },
                 {
@@ -244,10 +246,6 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u5c55\u5f0
 
 
 
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity">
 
 
 
