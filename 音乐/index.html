@@ -185,40 +185,42 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u5c55\u5f0
 
 	<div class="entry-content">
 		
-<link rel="stylesheet" href="https://bainano.github.io/wp-content/uploads/2025/03/APlayer.min_.css">
-<script src="https://bainano.github.io/wp-content/uploads/2025/03/APlayer.min_.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://bainano.github.io/wp-content/uploads/2025/03/APlayer.min_.css">
+</head>
 
-<div id="demo"></div>
+<body>
+    <div id="demo"></div>
+    <script src="https://bainano.github.io/wp-content/uploads/2025/03/APlayer.min_.js"></script>
+    <script>
+        var demo = new APlayer(
+        {
+            element: document.getElementById('demo'),
+            showlrc: false,
+            fixed: false,
+            mini: false,
+            audio: [
+                {
+                    title: '&#26377;&#29233;&#23601;&#19981;&#24597;',
+                    author: '&#24196;&#24515;&#22925;',
+                    url: '/wp-content/uploads/2025/03/&#24196;&#24515;&#22925;-&#26377;&#29233;&#23601;&#19981;&#24597;.mp3',
+                    pic: '/wp-content/uploads/2025/03/&#24196;&#24515;&#22925;-&#26377;&#29233;&#23601;&#19981;&#24597;-mp3-image-768x768.jpg',
 
-<script>
-    var demo = new APlayer
-    ({
-        element: document.getElementById('demo'),
-        showlrc: false,
-        fixed: false,
-        mini: false,
-        audio: [
-        	{
-                title: '&#26377;&#29233;&#23601;&#19981;&#24597;',
-                author: '&#24196;&#24515;&#22925;',
-                url: '/wp-content/uploads/2025/03/&#24196;&#24515;&#22925;-&#26377;&#29233;&#23601;&#19981;&#24597;.mp3',
-                pic: '/wp-content/uploads/2025/03/&#24196;&#24515;&#22925;-&#26377;&#29233;&#23601;&#19981;&#24597;-mp3-image-768x768.jpg',
-                
-        	},
-            {
-                title: '&#32473;&#25105;&#19968;&#39318;&#27468;&#30340;&#26102;&#38388;',
-                author: '&#21608;&#26480;&#20262;',
-                url: 'https://echeverra.cn/wp-content/uploads/2021/06/&#21608;&#26480;&#20262;-&#32473;&#25105;&#19968;&#39318;&#27468;&#30340;&#26102;&#38388;.mp3',
-                pic: 'https://echeverra.cn/wp-content/uploads/2021/06/&#21608;&#26480;&#20262;-&#32473;&#25105;&#19968;&#39318;&#27468;&#30340;&#26102;&#38388;-mp3-image.png'
-            }
-        ]
-    });
-    demo.init();
-</script>
+                },
+                {
+                    title: '&#32473;&#25105;&#19968;&#39318;&#27468;&#30340;&#26102;&#38388;',
+                    author: '&#21608;&#26480;&#20262;',
+                    url: 'https://echeverra.cn/wp-content/uploads/2021/06/&#21608;&#26480;&#20262;-&#32473;&#25105;&#19968;&#39318;&#27468;&#30340;&#26102;&#38388;.mp3',
+                    pic: 'https://echeverra.cn/wp-content/uploads/2021/06/&#21608;&#26480;&#20262;-&#32473;&#25105;&#19968;&#39318;&#27468;&#30340;&#26102;&#38388;-mp3-image.png'
+                }
+            ]
+        });
+        demo.init();
+    </script>
+</body>
 
 
-
-<p></p>
 			</div><!-- .entry-content -->
 
 	
