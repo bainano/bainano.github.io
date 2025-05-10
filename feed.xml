@@ -3,10 +3,22 @@
     <title>白楠</title>
     <link href="https://bainano.github.io/feed.xml" rel="self" />
     <link href="https://bainano.github.io" />
-    <updated>1970-01-01T08:00:00+08:00</updated>
+    <updated>2025-05-10T16:59:18+08:00</updated>
     <author>
         <name>白楠</name>
     </author>
     <id>https://bainano.github.io</id>
 
+    <entry>
+        <title>我的网站</title>
+        <author>
+            <name>白楠</name>
+        </author>
+        <link href="https://bainano.github.io/wo-de-wang-zhan-2.html"/>
+        <id>https://bainano.github.io/wo-de-wang-zhan-2.html</id>
+
+        <updated>2025-05-10T16:59:18+08:00</updated>
+            <summary></summary>
+        <content></content>
+    </entry>
 </feed>
