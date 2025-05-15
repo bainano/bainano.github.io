@@ -2297,6 +2297,14 @@ textarea {
   margin: 0 0 1rem;
 }
 
+.qzone {
+  background: #ffeb2b;
+}
+
+.qq {
+  background: #0062ff;
+}
+
 .facebook {
   background: #0866FF;
 }
