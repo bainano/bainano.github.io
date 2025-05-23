@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Search - 白楠</title><meta name="robots" content="noindex, follow"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="alternate" type="application/atom+xml" href="https://bainano.github.io/feed.xml" title="白楠 - RSS"><link rel="alternate" type="application/json" href="https://bainano.github.io/feed.json" title="白楠 - JSON"><meta property="og:title" content="白楠"><meta property="og:site_name" content="白楠"><meta property="og:description" content=""><meta property="og:url" content="https://bainano.github.io/"><meta property="og:type" content="website"><link rel="stylesheet" href="https://bainano.github.io/assets/css/style.css?v=ce3fd0f3043b3c1600b80f53bea4682a"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"白楠","url":"https://bainano.github.io/"}</script><style>.u-tag--wen-yi{--badge-bg:#84888E;--badge-txt:#FFFFFF;}</style><noscript><style>img[loading]{opacity:1;}</style></noscript><style>.li{fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}</style></head><body class="search-template"><div class="feedback-fixed"><form method="post" action="https://txc.qq.com/product/636558" class="feedback-btn-container"><input type="hidden" name="openid" value="tucao_123"> <input type="hidden" name="nickname" value="tucao_bainano"> <input type="hidden" name="avatar" value="https://txc.qq.com/static/desktop/img/products/def-product-logo.png"> <button type="submit" class="simple-feedback-btn">反馈与吐槽</button></form><button type="button" class="simple-feedback-btn update-log-btn" id="triggerUpdateLog" style="display: none;">更新日志</button></div><style>/* 简化版按钮样式（统一风格） */
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Search - 白楠</title><meta name="robots" content="noindex, follow"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="alternate" type="application/atom+xml" href="https://bainano.github.io/feed.xml" title="白楠 - RSS"><link rel="alternate" type="application/json" href="https://bainano.github.io/feed.json" title="白楠 - JSON"><meta property="og:title" content="白楠"><meta property="og:site_name" content="白楠"><meta property="og:description" content=""><meta property="og:url" content="https://bainano.github.io/"><meta property="og:type" content="website"><link rel="stylesheet" href="https://bainano.github.io/assets/css/style.css?v=e886b11fb498714a16fc79d8d2a1e867"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"白楠","url":"https://bainano.github.io/"}</script><style>.u-tag--wen-yi{--badge-bg:#84888E;--badge-txt:#FFFFFF;}</style><noscript><style>img[loading]{opacity:1;}</style></noscript><style>.li{fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}</style></head><body class="search-template"><div class="feedback-fixed"><form method="post" action="https://txc.qq.com/product/636558" class="feedback-btn-container"><input type="hidden" name="openid" value="tucao_123"> <input type="hidden" name="nickname" value="tucao_bainano"> <input type="hidden" name="avatar" value="https://txc.qq.com/static/desktop/img/products/def-product-logo.png"> <button type="submit" class="simple-feedback-btn">反馈与吐槽</button></form><button type="button" class="simple-feedback-btn update-log-btn" id="triggerUpdateLog" style="display: none;">更新日志</button></div><style>/* 简化版按钮样式（统一风格） */
 .simple-feedback-btn {
   background: #007bff;
   color: white;
@@ -97,44 +97,117 @@
       left: 0;
       @apply transition-custom; /* 明确应用统一过渡 */
     }
-  }</style><script>// 监听哈希变化
-function checkTheme() {
-    const isDarkMode = window.location.hash === '#dark';
-    document.documentElement.tAttribute('data-theme', isDarkMode ? 'dark' : null);
-    modifyInternalLinks(isDarkMode);
-}
+  }</style><style>:root { 
+        --white: #FFFFFF; 
+        --black: #000000; 
+        --dark: #121212; 
+        --text-color: #2C2E35; 
+        --headings-color: #2C2E35; 
+        --link-color: #2C2E35; 
+        --link-hover-color: #007BFF; 
+        --border-color-light: #E1E2E3; 
+    } 
 
-// 修改所有内部链接
-function modifyInternalLinks(isDarkMode) {
-    document.querySelectorAll('a').forEach(link => {
-        try {
-            const url = new URL(link.href);
-            // 仅处理同域名链接
-            if (url.hostname === window.location.hostname) {
-                if (isDarkMode) {
-                    url.hash = url.hash ? `${url.hash}#dark` : '#dark';
-                } else {
-                    url.hash = url.hash.replace(/#dark$/, '');
-                }
-                link.href = url.toString();
-            }
-        } catch {
-            // 处理相对路径
-            if (isDarkMode) {
-                link.href = link.href.split('#')[0] + '#dark';
-            } else {
-                link.href = link.href.replace(/#dark$/, '');
-            }
-        }
-    });
-}
+    [data-theme="dark"] { 
+        --text-color: #E0E0E0; 
+        --headings-color: #FFFFFF; 
+        --link-color: #BB86FC; 
+        --link-hover-color: #FFFFFF; 
+        --border-color-light: #333333; 
+    } 
 
-// 初始化检测
-checkTheme();
+    body { 
+        background: var(--white); 
+        color: var(--text-color); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; 
+        transition: background-color 0.3s, color 0.3s; 
+    } 
 
-// 添加事件监听
-window.addEventListener('hashchange', checkTheme);
-window.addEventListener('DOMContentLoaded', () => checkTheme());</script><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://bainano.github.io/">白楠</a><nav class="navbar"><button class="navbar__toggle" aria-label="菜单" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">菜单</span></span></button><ul class="navbar__menu"><li><a href="https://bainano.github.io/" title="首页" target="_self">首页</a></li><li><a href="https://bainano.github.io/tags/" target="_self">标签</a></li><li><a href="https://bainano.github.io/post/" target="_self">文章列表</a></li><li class="has-submenu"><span class="is-separator" aria-haspopup="true">更多</span><ul class="navbar__submenu level-2" aria-hidden="true"><li><a href="https://bainano.github.io/you-qing-lian-jie/" target="_self">友情链接</a></li></ul></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">最后更新： <time datetime="2025-05-23T22:37">五月 23, 2025</time></div><div class="infobar__search"><form action="https://bainano.github.io/search.html" class="search__form"><input class="search__input" type="search" name="q" placeholder="搜索..." aria-label="搜索..." required></form></div></div><main class="main page page--search"><div class="page__header"><h1 class="page__title box__title">搜索</h1></div><a href="https://cnblogs.vip/store" target="_blank">广告：博客园商店</a><form action="javascript:void(0);" class="search-page-form" onsubmit="return false;"><input type="search" id="live-search-input" placeholder="搜索..." class="search-page-input" required></form><div id="search-results"></div><script src="https://bainano.github.io/media/plugins/staticFuzzySearch/fuse.js"></script><script>(async function () {
+    [data-theme="dark"] body { 
+        background: var(--black); 
+    } 
+
+    .u-header { 
+        background: var(--white); 
+        padding: 1rem; 
+        border-bottom: 1px solid var(--border-color-light); 
+    } 
+
+    [data-theme="dark"] .u-header { 
+        background: var(--black) !important; 
+        border-bottom-color: var(--border-color-light); 
+    } 
+
+    h1, h2, h3, h4, h5, h6 { 
+        color: var(--headings-color); 
+    } 
+
+    p { 
+        color: var(--text-color); 
+    } 
+
+    a { 
+        color: var(--link-color); 
+        text-decoration: none; 
+        transition: color 0.3s; 
+    } 
+
+    a:hover { 
+        color: var(--link-hover-color); 
+    } 
+
+    #theme-toggle { 
+        position: fixed; 
+        left: 20px; 
+        bottom: 20px; 
+        padding: 10px 15px; 
+        background: var(--link-color); 
+        color: var(--white); 
+        border: none; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        z-index: 9999; 
+        transition: all 0.3s; 
+    } 
+
+    [data-theme="dark"] #theme-toggle { 
+        background: var(--white); 
+        color: var(--black); 
+    }</style><button id="theme-toggle">🌙 暗色模式</button><script>document.addEventListener('DOMContentLoaded', function() { 
+        const themeToggle = document.getElementById('theme-toggle'); 
+        const html = document.documentElement; 
+        
+        // 检查本地存储和URL哈希（默认使用浅色模式）
+        const savedTheme = localStorage.getItem('theme') || 'light';  // 无存储时默认light
+        const hashTheme = window.location.hash === '#dark' ? 'dark' : 'light'; 
+        
+        // 初始主题优先级：URL哈希 > 本地存储 > 默认light
+        const initialTheme = hashTheme === 'dark' ? 'dark' : savedTheme; 
+        html.setAttribute('data-theme', initialTheme); 
+        
+        // 更新按钮文本（初始为暗色模式切换提示）
+        updateButtonText(initialTheme); 
+        
+        // 主题切换事件
+        themeToggle.addEventListener('click', function() { 
+            const currentTheme = html.getAttribute('data-theme'); 
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; 
+            
+            // 更新主题属性和本地存储
+            html.setAttribute('data-theme', newTheme); 
+            localStorage.setItem('theme', newTheme); 
+            
+            // 更新URL哈希
+            window.location.hash = newTheme === 'dark' ? '#dark' : ''; 
+            
+            // 更新按钮文本
+            updateButtonText(newTheme); 
+        }); 
+        
+        function updateButtonText(theme) { 
+            themeToggle.textContent = theme === 'dark' ? '☀️ 浅色模式' : '🌙 暗色模式'; 
+        } 
+    });</script><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://bainano.github.io/">白楠</a><nav class="navbar"><button class="navbar__toggle" aria-label="菜单" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">菜单</span></span></button><ul class="navbar__menu"><li><a href="https://bainano.github.io/" title="首页" target="_self">首页</a></li><li><a href="https://bainano.github.io/tags/" target="_self">标签</a></li><li><a href="https://bainano.github.io/post/" target="_self">文章列表</a></li><li class="has-submenu"><span class="is-separator" aria-haspopup="true">更多</span><ul class="navbar__submenu level-2" aria-hidden="true"><li><a href="https://bainano.github.io/you-qing-lian-jie/" target="_self">友情链接</a></li></ul></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">最后更新： <time datetime="2025-05-24T07:07">五月 24, 2025</time></div><div class="infobar__search"><form action="https://bainano.github.io/search.html" class="search__form"><input class="search__input" type="search" name="q" placeholder="搜索..." aria-label="搜索..." required></form></div></div><main class="main page page--search"><div class="page__header"><h1 class="page__title box__title">搜索</h1></div><a href="https://cnblogs.vip/store" target="_blank">广告：博客园商店</a><form action="javascript:void(0);" class="search-page-form" onsubmit="return false;"><input type="search" id="live-search-input" placeholder="搜索..." class="search-page-input" required></form><div id="search-results"></div><script src="https://bainano.github.io/media/plugins/staticFuzzySearch/fuse.js"></script><script>(async function () {
 					const searchInput = document.getElementById("live-search-input");
 					const resultsContainer = document.getElementById("search-results");
 	
