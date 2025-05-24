@@ -64,154 +64,183 @@
     // 方案3：正则匹配首页路径（如 /index.html 或根路径）
     const homePattern = /^\/$|\/index\.html$/;
     return homePattern.test(window.location.pathname);
-  }</script><style type="text/tailwindcss">@layer utilities {
-    .content-auto {
-      content-visibility: auto;
-    }
-    .transition-custom {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* 统一过渡函数 */
-    }
-    .bg-gradient-day {
-      background: linear-gradient(135deg, #f0f9ff 0%, #cbe8ff 100%);
-    }
-    .bg-gradient-night {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    }
-    .toggle-btn {
-      cursor: pointer;
-      @apply transition-custom; /* 继承统一过渡 */
-    }
-    .toggle-btn:hover {
-      transform: scale(1.05);
-    }
-    .toggle-btn:active {
-      transform: scale(0.95);
-    }
-    .orbit-track {
-      position: relative;
-      width: 48px;
-      height: 120px; /* 保持足够空间让两个48px按钮垂直移动 */
-    }
-    .orbit-circle {
-      position: absolute;
-      left: 0;
-      @apply transition-custom; /* 明确应用统一过渡 */
-    }
-  }</style><style>:root { 
-        --white: #FFFFFF; 
-        --black: #000000; 
-        --dark: #121212; 
-        --text-color: #2C2E35; 
-        --headings-color: #2C2E35; 
-        --link-color: #2C2E35; 
-        --link-hover-color: #007BFF; 
-        --border-color-light: #E1E2E3; 
-    } 
+  }</script><style>:root {
+    // ... existing code ...
+    --lighter: #F0F0F2;
+}
 
-    [data-theme="dark"] { 
-        --text-color: #E0E0E0; 
-        --headings-color: #FFFFFF; 
-        --link-color: #BB86FC; 
-        --link-hover-color: #FFFFFF; 
-        --border-color-light: #333333; 
-    } 
+[data-theme="dark"] {
+    --text-color: #E3E5EE;
+    --headings-color: #E3E5EE;
+    --link-color: #FFFFFF;
+    --link-hover-color: #309dfc;
+    --border-color-light: #333333;
+    --lighter: #262627;
+}
 
-    body { 
-        background: var(--white); 
-        color: var(--text-color); 
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; 
-        transition: background-color 0.3s, color 0.3s; 
-    } 
+pre {
+    background-color: var(--lighter);
+    border-radius: 3px;
+    font-size: .9374999997rem;
+    padding: 1.4571428571rem;
+    white-space: pre-wrap!important;
+    word-wrap: break-word;
+    width: 100%;
+}
+        
+body {
 
-    [data-theme="dark"] body { 
-        background: var(--black); 
-    } 
+background: var(--white);
 
-    .u-header { 
-    background: var(--white); 
-    padding: 1rem;    
-} 
+color: var(--text-color);
 
-    [data-theme="dark"] .u-header { 
-        background: var(--black) !important; 
-        border-bottom-color: var(--border-color-light); 
-    } 
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 
-    h1, h2, h3, h4, h5, h6 { 
-        color: var(--headings-color); 
-    } 
+transition: background-color 0.3s, color 0.3s;
 
-    p { 
-        color: var(--text-color); 
-    } 
+}
 
-    a { 
-        color: var(--link-color); 
-        text-decoration: none; 
-        transition: color 0.3s; 
-    } 
+[data-theme="dark"] body {
 
-    a:hover { 
-        color: var(--link-hover-color); 
-    } 
+background: var(--black);
 
-    #theme-toggle { 
-        position: fixed; 
-        left: 20px; 
-        bottom: 20px; 
-        padding: 10px 15px; 
-        background: var(--link-color); 
-        color: var(--white); 
-        border: none; 
-        border-radius: 4px; 
-        cursor: pointer; 
-        z-index: 9999; 
-        transition: all 0.3s; 
-    } 
+}
 
-    [data-theme="dark"] #theme-toggle { 
-        background: var(--white); 
-        color: var(--black); 
-    }</style><button id="theme-toggle">🌙 暗色模式</button><script>function initializeTheme() { 
-        const html = document.documentElement; 
-        const savedTheme = localStorage.getItem('theme') || 'light'; 
-        const hashTheme = window.location.hash === '#dark' ? 'dark' : 'light'; 
-        const initialTheme = hashTheme === 'dark' ? 'dark' : savedTheme; 
-        html.setAttribute('data-theme', initialTheme); 
-        updateButtonText(initialTheme); 
-    } 
+.u-header {
 
-    function updateButtonText(theme) { 
-        const themeToggle = document.getElementById('theme-toggle'); 
-        themeToggle.textContent = theme === 'dark' ? '☀️ 浅色模式' : '🌙 暗色模式'; 
-    } 
+background: var(--white);
 
-    // 初始加载时执行 
-    document.addEventListener('DOMContentLoaded', initializeTheme); 
-    
-    // 页面从缓存恢复时执行（解决浏览器返回不更新问题）
-    window.addEventListener('pageshow', initializeTheme); 
+padding: 1rem;
 
-    // 主题切换事件 
-    document.addEventListener('DOMContentLoaded', function() { 
-        const themeToggle = document.getElementById('theme-toggle'); 
-        themeToggle.addEventListener('click', function() { 
-            const html = document.documentElement; 
-            const currentTheme = html.getAttribute('data-theme'); 
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; 
-             
-            html.setAttribute('data-theme', newTheme); 
-            localStorage.setItem('theme', newTheme); 
-             
-            history.replaceState(
-                {}, 
-                document.title, 
-                newTheme === 'dark' ? '#dark' : window.location.pathname + window.location.search
-            ); 
-             
-            updateButtonText(newTheme); 
-        }); 
-    });</script><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://bainano.github.io/">白楠</a><nav class="navbar"><button class="navbar__toggle" aria-label="菜单" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">菜单</span></span></button><ul class="navbar__menu"><li><a href="https://bainano.github.io/" title="首页" target="_self">首页</a></li><li><a href="https://bainano.github.io/tags/" target="_self">标签</a></li><li><a href="https://bainano.github.io/post/" target="_self">文章列表</a></li><li class="has-submenu"><span class="is-separator" aria-haspopup="true">更多</span><ul class="navbar__submenu level-2" aria-hidden="true"><li><a href="https://bainano.github.io/you-qing-lian-jie/" target="_self">友情链接</a></li></ul></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">最后更新： <time datetime="2025-05-24T07:47">五月 24, 2025</time></div><div class="infobar__search"><form action="https://bainano.github.io/search.html" class="search__form"><input class="search__input" type="search" name="q" placeholder="搜索..." aria-label="搜索..." required></form></div></div><main class="main page page--error"><div class="page__header"><h1 class="page__title box__title">404</h1><p>哎呀，出错了</p></div></main><div class="sidebar"><section class="box featured"><h3 class="box__title">精选内容</h3><ul class="featured__container"><li class="featured__item"><a href="https://bainano.github.io/post/1907092049414590845/" class="featured__image-link"><img src="https://bainano.github.io/media/posts/3/responsive/Lin-Xia-xs.png" class="lazyload" loading="lazy" alt="" height="1536" width="1536"></a><div><a href="https://bainano.github.io/post/1907092049414590845/" class="featured__title">你好，世界</a> <time class="u-small" datetime="2025-05-17T10:25">五月 17, 2025</time></div></li></ul></section><section class="box"><h3 class="box__title">关注我们</h3><div class="follow"><a href="https://www.zhihu.com/people/mi-lu-de-xiao-hui-hui-80" class="zhihu" aria-label="知乎"><svg class="u-icon"><use xlink:href="https://bainano.github.io/assets/svg/svg-map.svg#zhihu"/></svg> 知乎 </a><a href="https://pd.qq.com/g/awakeng316" class="qqpd" aria-label="腾讯频道"><svg class="u-icon"><use xlink:href="https://bainano.github.io/assets/svg/svg-map.svg#qqpd"/></svg> 腾讯频道</a></div></section><section class="box"><h3 class="box__title">标签</h3><ul class="tags"><li><a href="https://bainano.github.io/tags/wen-yi/">文艺</a> <span class="u-small">(1)</span></li></ul></section></div><footer class="footer"><a class="footer__logo" href="https://bainano.github.io/">白楠</a><nav><ul class="footer__nav"><li class="footer__nav-item"><a href="https://bainano.github.io/guan-yu/" target="_self">关于</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://bainano.github.io/shen-qing-you-qing-lian-jie/">申请友情链接</a></li></ul></nav><div class="footer__copyright"><p>     </p></div></footer></div><script>window.publiiThemeMenuConfig = {    
+}
+
+[data-theme="dark"] .u-header {
+
+background: var(--black) !important;
+
+border-bottom-color: var(--border-color-light);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+color: var(--headings-color);
+
+}
+
+p {
+
+color: var(--text-color);
+
+}
+
+a { 
+         color: var(--link-color); 
+         text-decoration: none; 
+         transition: color 0.3s; 
+     } 
+ 
+     a:hover { 
+         color: var(--link-hover-color); 
+     } 
+
+#theme-toggle {
+
+position: fixed;
+
+left: 20px;
+
+bottom: 20px;
+
+padding: 10px 15px;
+
+background: var(--link-color);
+
+color: var(--white);
+
+border: none;
+
+border-radius: 4px;
+
+cursor: pointer;
+
+z-index: 9999;
+
+transition: all 0.3s;
+
+}
+
+[data-theme="dark"] #theme-toggle {
+
+background: var(--white);
+
+color: var(--black);
+
+}</style><button id="theme-toggle">🌙 暗色模式</button><script>function initializeTheme() {
+
+const html = document.documentElement;
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+
+const hashTheme = window.location.hash === '#dark' ? 'dark' : 'light';
+
+const initialTheme = hashTheme === 'dark' ? 'dark' : savedTheme;
+
+html.setAttribute('data-theme', initialTheme);
+
+updateButtonText(initialTheme);
+
+}
+
+function updateButtonText(theme) {
+
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.textContent = theme === 'dark' ? '☀️ 浅色模式' : '🌙 暗色模式';
+
+}
+
+// 初始加载时执行
+
+document.addEventListener('DOMContentLoaded', initializeTheme);
+
+// 页面从缓存恢复时执行（解决浏览器返回不更新问题）
+
+window.addEventListener('pageshow', initializeTheme);
+
+// 主题切换事件
+
+document.addEventListener('DOMContentLoaded', function() {
+
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', function() {
+
+const html = document.documentElement;
+
+const currentTheme = html.getAttribute('data-theme');
+
+const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+html.setAttribute('data-theme', newTheme);
+
+localStorage.setItem('theme', newTheme);
+
+history.replaceState(
+
+{},
+
+document.title,
+
+newTheme === 'dark' ? '#dark' : window.location.pathname + window.location.search
+
+);
+
+updateButtonText(newTheme);
+
+});
+
+});</script><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://bainano.github.io/">白楠</a><nav class="navbar"><button class="navbar__toggle" aria-label="菜单" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">菜单</span></span></button><ul class="navbar__menu"><li><a href="https://bainano.github.io/" title="首页" target="_self">首页</a></li><li><a href="https://bainano.github.io/tags/" target="_self">标签</a></li><li><a href="https://bainano.github.io/post/" target="_self">文章列表</a></li><li class="has-submenu"><span class="is-separator" aria-haspopup="true">更多</span><ul class="navbar__submenu level-2" aria-hidden="true"><li><a href="https://bainano.github.io/you-qing-lian-jie/" target="_self">友情链接</a></li></ul></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">最后更新： <time datetime="2025-05-24T11:51">五月 24, 2025</time></div><div class="infobar__search"><form action="https://bainano.github.io/search.html" class="search__form"><input class="search__input" type="search" name="q" placeholder="搜索..." aria-label="搜索..." required></form></div></div><main class="main page page--error"><div class="page__header"><h1 class="page__title box__title">404</h1><p>哎呀，出错了</p></div></main><div class="sidebar"><section class="box featured"><h3 class="box__title">精选内容</h3><ul class="featured__container"><li class="featured__item"><a href="https://bainano.github.io/post/1907092049414590845/" class="featured__image-link"><img src="https://bainano.github.io/media/posts/3/responsive/Lin-Xia-2-xs.png" class="lazyload" loading="lazy" alt="" height="1536" width="1536"></a><div><a href="https://bainano.github.io/post/1907092049414590845/" class="featured__title">你好，世界</a> <time class="u-small" datetime="2025-05-17T10:25">五月 17, 2025</time></div></li></ul></section><section class="box"><h3 class="box__title">关注我们</h3><div class="follow"><a href="https://www.zhihu.com/people/mi-lu-de-xiao-hui-hui-80" class="zhihu" aria-label="知乎"><svg class="u-icon"><use xlink:href="https://bainano.github.io/assets/svg/svg-map.svg#zhihu"/></svg> 知乎 </a><a href="https://pd.qq.com/g/awakeng316" class="qqpd" aria-label="腾讯频道"><svg class="u-icon"><use xlink:href="https://bainano.github.io/assets/svg/svg-map.svg#qqpd"/></svg> 腾讯频道</a></div></section><section class="box"><h3 class="box__title">标签</h3><ul class="tags"><li><a href="https://bainano.github.io/tags/wen-yi/">文艺</a> <span class="u-small">(1)</span></li></ul></section></div><footer class="footer"><a class="footer__logo" href="https://bainano.github.io/">白楠</a><nav><ul class="footer__nav"><li class="footer__nav-item"><a href="https://bainano.github.io/guan-yu/" target="_self">关于</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://bainano.github.io/shen-qing-you-qing-lian-jie/">申请友情链接</a></li></ul></nav><div class="footer__copyright"><p><span style="color: #2dc26b;">Bainan web blog, thanks every one,we are friends</span></p></div></footer></div><script>window.publiiThemeMenuConfig = {    
             mobileMenuMode: 'sidebar',
             animationSpeed: 300,
             submenuWidth: 'auto',
