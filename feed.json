@@ -12,7 +12,7 @@
         {
             "id": "https://bainano.github.io/post/ni-hao/",
             "url": "https://bainano.github.io/post/ni-hao/",
-            "title": "你好",
+            "title": "你好，世界",
             "content_html": "\n  <p>\n    \n  </p>",
             "author": {
                 "name": "白楠"
@@ -21,7 +21,7 @@
                    "文艺"
             ],
             "date_published": "2025-06-11T21:26:30+08:00",
-            "date_modified": "2025-06-11T23:05:52+08:00"
+            "date_modified": "2025-06-12T17:18:40+08:00"
         }
     ]
 }
