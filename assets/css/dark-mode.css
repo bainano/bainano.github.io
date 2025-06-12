@@ -186,6 +186,25 @@ body {
   width: 22px;
 }
 
+/* Giscus深色模式适配 */
+[data-theme="dark"] .giscus-frame {
+  background-color: var(--dark) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .giscus {
+  color-scheme: dark;
+}
+
+/* 确保giscus iframe在深色模式下使用深色主题 */
+[data-theme="dark"] .giscus-frame {
+  display: none;
+}
+
+[data-theme="dark"] .giscus-frame[data-theme="dark"] {
+  display: block;
+}
+
 /* hover状态下也确保没有背景 */
 [data-theme="dark"] .navbar__toggle:hover,
 .navbar__toggle:hover,
