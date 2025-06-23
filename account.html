@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+    <meta charset="UTF-8">
     <title>账户管理</title>
     <style>
-        .auth-container {
+        .container {
             max-width: 400px;
             margin: 50px auto;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .form-group {
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            background: #4CAF50;
+            color: white;
+        }
+        .form {
+            display: none;
+        }
+        .form.active {
+            display: block;
+        }
+        .input-group {
             margin-bottom: 15px;
         }
         input {
@@ -17,100 +39,137 @@
             padding: 8px;
             margin-top: 5px;
         }
-        button {
+        button[type="submit"] {
             width: 100%;
             padding: 10px;
-            background: #007bff;
+            background: #4CAF50;
             color: white;
             border: none;
+            cursor: pointer;
         }
-        .error {
-            color: red;
-            margin-top: 10px;
+        .message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .message.success {
+            background: #dff0d8;
+            color: #3c763d;
+        }
+        .message.error {
+            background: #f2dede;
+            color: #a94442;
         }
     </style>
 </head>
 <body>
-    <div class="auth-container">
-        <div id="loginForm">
-            <h2>登录</h2>
-            <div class="form-group">
-                <input type="text" id="loginUsername" placeholder="用户名">
-            </div>
-            <div class="form-group">
-                <input type="password" id="loginPassword" placeholder="密码">
-            </div>
-            <button onclick="login()">登录</button>
-            <p>没有账号？<a href="#" onclick="showRegister()">立即注册</a></p>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-target="register-form">注册</button>
+            <button class="tab-btn" data-target="login-form">登录</button>
         </div>
 
-        <div id="registerForm" style="display:none;">
-            <h2>注册</h2>
-            <div class="form-group">
-                <input type="text" id="regUsername" placeholder="用户名">
+        <div id="register-form" class="form active">
+            <div class="input-group">
+                <label>用户名：</label>
+                <input type="text" id="reg-username" required>
             </div>
-            <div class="form-group">
-                <input type="email" id="regEmail" placeholder="邮箱">
+            <div class="input-group">
+                <label>密码：</label>
+                <input type="password" id="reg-password" required>
             </div>
-            <div class="form-group">
-                <input type="password" id="regPassword" placeholder="密码">
+            <div class="input-group">
+                <label>确认密码：</label>
+                <input type="password" id="reg-confirm-password" required>
             </div>
-            <button onclick="register()">注册</button>
-            <p>已有账号？<a href="#" onclick="showLogin()">立即登录</a></p>
+            <button type="submit" onclick="handleRegister()">注册</button>
+            <div id="reg-message" class="message"></div>
         </div>
 
-        <div class="error" id="errorMsg"></div>
+        <div id="login-form" class="form">
+            <div class="input-group">
+                <label>用户名：</label>
+                <input type="text" id="login-username" required>
+            </div>
+            <div class="input-group">
+                <label>密码：</label>
+                <input type="password" id="login-password" required>
+            </div>
+            <button type="submit" onclick="handleLogin()">登录</button>
+            <div id="login-message" class="message"></div>
+        </div>
     </div>
 
-    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.13.2/dist/av-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.15.0/dist/av-min.js"></script>
     <script>
         // 初始化LeanCloud
         AV.init({
             appId: '5u6XQT01JAIEleY3Wb576IUa-gzGzoHsz',
             appKey: 'ex5BZEVApgIsFyrNKSelvLjE',
-            serverURL: 'https://5u6xqt01.lc-cn-n1-shared.com'
+            serverURLs: 'https://5u6xqt01.lc-cn-n1-shared.com'
         });
 
-        function showRegister() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'block';
-        }
+        // 选项卡切换
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.target;
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelectorAll('.form').forEach(form => form.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+            });
+        });
 
-        function showLogin() {
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('loginForm').style.display = 'block';
-        }
+        // 注册处理
+        function handleRegister() {
+            const username = document.getElementById('reg-username').value;
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm-password').value;
+            const messageEl = document.getElementById('reg-message');
 
-        function displayError(message) {
-            document.getElementById('errorMsg').innerHTML = message;
-        }
+            if (password !== confirmPassword) {
+                showMessage(messageEl, '密码与确认密码不一致', 'error');
+                return;
+            }
 
-        async function register() {
             const user = new AV.User();
-            user.setUsername(document.getElementById('regUsername').value);
-            user.setPassword(document.getElementById('regPassword').value);
-            user.setEmail(document.getElementById('regEmail').value);
+            user.setUsername(username);
+            user.setPassword(password);
 
-            try {
-                await user.signUp();
-                alert('注册成功！');
-                showLogin();
-            } catch (error) {
-                displayError(`注册失败: ${error.message}`);
-            }
+            user.signUp().then(() => {
+                showMessage(messageEl, '注册成功！', 'success');
+                document.getElementById('reg-username').value = '';
+                document.getElementById('reg-password').value = '';
+                document.getElementById('reg-confirm-password').value = '';
+            }).catch(error => {
+                showMessage(messageEl, `注册失败：${error.message}`, 'error');
+            });
         }
 
-        async function login() {
-            try {
-                await AV.User.logIn(
-                    document.getElementById('loginUsername').value,
-                    document.getElementById('loginPassword').value
-                );
-                alert('登录成功！');
-                window.location.href = '/profile';
-            } catch (error) {
-                displayError(`登录失败: ${error.message}`);
-            }
+        // 登录处理
+        function handleLogin() {
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            const messageEl = document.getElementById('login-message');
+
+            AV.User.logIn(username, password).then(() => {
+                showMessage(messageEl, '登录成功！', 'success');
+                document.getElementById('login-username').value = '';
+                document.getElementById('login-password').value = '';
+            }).catch(error => {
+                showMessage(messageEl, `登录失败：${error.message}`, 'error');
+            });
+        }
+
+        // 显示提示信息
+        function showMessage(element, text, type) {
+            element.textContent = text;
+            element.className = `message ${type}`;
+            element.style.display = 'block';
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 3000);
         }
     </script>
 </body>
