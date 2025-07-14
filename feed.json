@@ -1,28 +1,13 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "TNTMC",
+    "title": "白楠",
     "description": "",
-    "home_page_url": "https://bainano.github.io",
-    "feed_url": "https://bainano.github.io/feed.json",
+    "home_page_url": "https://bainano.github.io/bainano.github.io",
+    "feed_url": "https://bainano.github.io/bainano.github.io/feed.json",
     "user_comment": "",
-    "icon": "https://bainano.github.io/media/website/Pin-He-Tu-Xing-1.svg",
     "author": {
-        "name": "bainan"
+        "name": "白楠"
     },
     "items": [
-        {
-            "id": "https://bainano.github.io/ni-hao.html",
-            "url": "https://bainano.github.io/ni-hao.html",
-            "title": "你好",
-            "content_html": "\n  <p>\n    \n  </p>",
-            "author": {
-                "name": "bainan"
-            },
-            "tags": [
-                   "红石"
-            ],
-            "date_published": "2025-06-19T22:02:25+08:00",
-            "date_modified": "2025-06-19T22:02:25+08:00"
-        }
     ]
 }
