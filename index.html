@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            padding: 36px 0 40px 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #e54d42 0%, #d43f34 100%);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .site-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 100%;
+            gap: 10px;
+        }
+        .site-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+        .site-subtitle {
+            font-size: 12px;
+            font-weight: 300;
+            opacity: 0.9;
+            line-height: 1;
+        }
+        .search-container {
+            display: flex;
+            gap: 0;
+            max-width: 300px;
+            width: 100%;
+        }
+        .search-input {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 0;
+            font-size: 14px;
+            outline: none;
+            background: rgba(255,255,255,0.95);
+            transition: all 0.3s ease;
+            height: 36px;
+        }
+        .search-input:focus {
+            background: white;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+        }
+        .search-button {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            height: 36px;
+        }
+        .search-button:hover {
+            background: #34495e;
+            transform: translateY(-1px);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 28px;
+            color: #e54d42;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .blog-card {
+            background-color: #fff;
+            margin-bottom: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .blog-card:hover {
+            transform: translateY(-1px);
+        }
+        .card-content {
+            padding: 24px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .card-date {
+            background-color: #f5f7fa;
+            color: #e54d42;
+            padding: 4px 12px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .card-category {
+            background-color: #f5f7fa;
+            color: #e54d42;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card-title {
+            font-size: 20px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .card-title a:hover {
+            color: #e54d42;
+        }
+        .card-excerpt {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            color: #999;
+            font-size: 13px;
+        }
+        .meta-item span {
+            margin-right: 16px;
+        }
+        .read-more {
+            color: #e54d42;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .read-more:hover {
+            color: #d43f34;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 16px;
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header {
+                height: auto;
+                padding: 10px 0;
+            }
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .search-container {
+                max-width: 100%;
+            }
+            .card-content {
+                padding: 20px;
+            }
+            .card-title {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 0 0 20px;
+            }
+            .header {
+                margin-bottom: 30px;
+            }
+            .header-content {
+                padding: 0 16px;
+            }
+            .site-title {
+                font-size: 18px;
+            }
+            .site-subtitle {
+                font-size: 11px;
+            }
+            .search-input, .search-button {
+                padding: 8px 14px;
+                height: 32px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .card-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .meta-item {
+                flex-wrap: wrap;
+            }
+            .meta-item span {
+                margin-right: 12px;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="site-info">
+                <h1 class="site-title">技术博客</h1>
+                <p class="site-subtitle">分享技术、设计与生活感悟</p>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索文章..." id="searchInput">
+                <button class="search-button" id="searchButton">搜索</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div id="blogContainer">
+            <!-- 博客卡片 1 -->
+            <div class="blog-card" data-title="前端开发中的性能优化技巧" data-category="技术分享" data-content="在现代Web开发中，性能优化是一个永恒的话题。本文将分享一些实用的前端性能优化技巧，包括资源加载优化、渲染优化、JavaScript执行优化等方面，帮助你构建更快、更流畅的Web应用。">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-category">技术分享</span>
+                        <span class="card-date">2024-01-15</span>
+                    </div>
+                    <h3 class="card-title"><a href="article-detail.html">前端开发中的性能优化技巧</a></h3>
+                    <p class="card-excerpt">在现代Web开发中，性能优化是一个永恒的话题。本文将分享一些实用的前端性能优化技巧，包括资源加载优化、渲染优化、JavaScript执行优化等方面，帮助你构建更快、更流畅的Web应用。</p>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <span>作者：技术博客</span>
+                        </div>
+                        <a href="article-detail.html" class="read-more">阅读全文</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 博客卡片 2 -->
+            <div class="blog-card" data-title="2024年UI设计趋势预测" data-category="设计灵感" data-content="随着设计工具和技术的不断发展，UI设计趋势也在不断演变。本文将预测2024年可能流行的UI设计趋势，包括色彩搭配、排版设计、动效设计等方面，为你的设计工作提供参考。">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-category">设计灵感</span>
+                        <span class="card-date">2024-01-12</span>
+                    </div>
+                    <h3 class="card-title"><a href="#">2024年UI设计趋势预测</a></h3>
+                    <p class="card-excerpt">随着设计工具和技术的不断发展，UI设计趋势也在不断演变。本文将预测2024年可能流行的UI设计趋势，包括色彩搭配、排版设计、动效设计等方面，为你的设计工作提供参考。</p>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <span>作者：设计专栏</span>
+                        </div>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 博客卡片 3 -->
+            <div class="blog-card" data-title="程序员的高效工作方式" data-category="生活感悟" data-content="作为一名程序员，如何提高工作效率是我们经常思考的问题。本文将分享一些个人的高效工作经验，包括时间管理、任务规划、学习方法等方面，希望能对你有所帮助。">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-category">生活感悟</span>
+                        <span class="card-date">2024-01-10</span>
+                    </div>
+                    <h3 class="card-title"><a href="#">程序员的高效工作方式</a></h3>
+                    <p class="card-excerpt">作为一名程序员，如何提高工作效率是我们经常思考的问题。本文将分享一些个人的高效工作经验，包括时间管理、任务规划、学习方法等方面，希望能对你有所帮助。</p>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <span>作者：生活随笔</span>
+                        </div>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取搜索相关的DOM元素
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const blogContainer = document.getElementById('blogContainer');
+        const blogCards = document.querySelectorAll('.blog-card');
+        
+        // 搜索函数
+        function performSearch() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            
+            // 如果搜索词为空，显示所有博客卡片
+            if (searchTerm === '') {
+                blogCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                return;
+            }
+            
+            // 遍历所有博客卡片进行匹配
+            let hasResults = false;
+            blogCards.forEach(card => {
+                // 获取卡片的标题、分类和内容
+                const title = card.getAttribute('data-title').toLowerCase();
+                const category = card.getAttribute('data-category').toLowerCase();
+                const content = card.getAttribute('data-content').toLowerCase();
+                
+                // 检查是否匹配搜索词
+                if (title.includes(searchTerm) || category.includes(searchTerm) || content.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // 如果没有匹配结果，显示提示信息
+            if (!hasResults) {
+                blogContainer.innerHTML += `
+                    <div class="no-results">
+                        <p>没有找到与 "${searchInput.value}" 相关的文章</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // 绑定搜索事件
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // 清空搜索框时恢复所有内容
+        searchInput.addEventListener('input', function() {
+            if (this.value === '') {
+                // 移除可能存在的"无结果"提示
+                const noResults = document.querySelector('.no-results');
+                if (noResults) {
+                    noResults.remove();
+                }
+                
+                // 显示所有卡片
+                blogCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

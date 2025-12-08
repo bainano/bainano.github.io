@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 善意不迷路</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .error-container {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        /* 容器尺寸与单朵花一致：200×160px */
+        .flower-wrapper {
+            width: 200px;
+            height: 160px;
+            margin: 0 auto 30px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: relative; /* 用于定位图片 */
+        }
+        .flower-img {
+            width: 200px;
+            height: 9600px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: top 0.5s ease-in-out;
+        }
+        .error-code {
+            font-size: 80px;
+            color: #e54d42;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        .error-text {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+        .donate-btn {
+            display: inline-block;
+            padding: 12px 36px;
+            background-color: #e54d42;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .donate-btn:hover {
+            background-color: #d43f34;
+            box-shadow: 0 4px 15px rgba(229, 77, 66, 0.25);
+            transform: translateY(-2px);
+        }
+        .footer-tip {
+            display: block;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="flower-wrapper">
+            <img id="randomFlower" src="https://scdn.gongyi.qq.com/gongyi/static/homepage/header-info-flower-seq1-v2.png" alt="公益花朵" class="flower-img">
+        </div>
+        <h1 class="error-code">404</h1>
+        <p class="error-text">你访问的页面走丢了<br>不如带着这份小幸运，去腾讯公益传递善意</p>
+        <a href="https://ssl.gongyi.qq.com/m/weixin/index2_gzzh.html" class="donate-btn" target="_blank">前往腾讯公益献爱心</a>
+        <a href="https://y.qq.com/n/ryqq_v2/mv/w00358xp1lk" class="footer-tip" target="_blank">送你一朵小红花，开在心间长出芽</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const flowerImg = document.getElementById('randomFlower');
+            const flowerCount = 60; 
+            const singleHeight = 9600 / flowerCount;
+            const randomIndex = Math.floor(Math.random() * flowerCount);
+            flowerImg.style.top = `-${randomIndex * singleHeight}px`;
+        }
+    </script>
+</body>
+</html>
+
