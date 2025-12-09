@@ -3,405 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客首页</title>
+    <title>主页设计</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
         }
+        
         body {
-            background-color: #f5f7fa;
-            min-height: 100vh;
-            padding: 36px 0 40px 0;
+            height: auto;
+            overflow-x: hidden;
+            position: relative;
+            scrollbar-width: none; /* Firefox */
         }
-        .header {
-            background: linear-gradient(135deg, #e54d42 0%, #d43f34 100%);
-            color: white;
-            padding: 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            width: 100%;
-            height: 36px;
-            display: flex;
-            align-items: center;
+        
+        body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        html {
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        html::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             z-index: 1000;
+            padding: 0 40px;
         }
-        .header-content {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 0 20px;
-        }
-        .site-info {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            height: 100%;
-            gap: 10px;
-        }
-        .site-title {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            line-height: 1;
-        }
-        .site-subtitle {
-            font-size: 12px;
-            font-weight: 300;
-            opacity: 0.9;
-            line-height: 1;
-        }
-        .search-container {
-            display: flex;
-            gap: 0;
-            max-width: 300px;
-            width: 100%;
-        }
-        .search-input {
-            flex: 1;
-            padding: 10px 16px;
-            border: none;
-            border-radius: 0;
-            font-size: 14px;
-            outline: none;
-            background: rgba(255,255,255,0.95);
-            transition: all 0.3s ease;
-            height: 36px;
-        }
-        .search-input:focus {
-            background: white;
-            box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
-        }
-        .search-button {
-            background: #2c3e50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 0;
+        
+        /* 移动端菜单按钮 */
+        .menu-toggle {
+            display: none;
+            position: relative;
+            width: 30px;
+            height: 24px;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            height: 36px;
+            z-index: 1001;
         }
-        .search-button:hover {
-            background: #34495e;
-            transform: translateY(-1px);
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .section-title {
-            font-size: 28px;
-            color: #e54d42;
-            font-weight: 300;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .blog-card {
+        
+        .menu-toggle span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
             background-color: #fff;
-            margin-bottom: 24px;
-            overflow: hidden;
             transition: all 0.3s ease;
-            display: block;
         }
-        .blog-card:hover {
-            transform: translateY(-1px);
+        
+        .menu-toggle span:nth-child(1) {
+            top: 0;
         }
-        .card-content {
-            padding: 24px;
+        
+        .menu-toggle span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
         }
-        .card-header {
+        
+        .menu-toggle span:nth-child(3) {
+            bottom: 0;
+        }
+        
+        /* 菜单打开状态 */
+        .menu-toggle.is-clicked span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 50%;
+            margin-top: -1px;
+        }
+        
+        .menu-toggle.is-clicked span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.is-clicked span:nth-child(3) {
+            transform: rotate(-45deg);
+            bottom: 50%;
+            margin-bottom: -1px;
+        }
+        
+        /* 导航栏标题 */
+        .navbar-title {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: sans-serif;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .navbar-title.visible {
+            opacity: 1;
+        }
+        
+        /* 导航项容器 */
+        .nav-items {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            gap: 40px;
         }
-        .card-date {
-            background-color: #f5f7fa;
-            color: #e54d42;
-            padding: 4px 12px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-        .card-category {
-            background-color: #f5f7fa;
-            color: #e54d42;
-            padding: 4px 12px;
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .card-title {
-            font-size: 20px;
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        .card-title a {
-            color: inherit;
+        
+        .nav-item {
+            color: #fff;
             text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: sans-serif;
+            position: relative;
+            padding: 10px 0;
             transition: color 0.3s ease;
         }
-        .card-title a:hover {
-            color: #e54d42;
+        
+        .nav-item:hover {
+            color: #ccc;
         }
-        .card-excerpt {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+        
+        /* 横线动画效果 */
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
         }
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 16px;
-            border-top: 1px solid #f0f0f0;
+        
+        .nav-item:hover::after {
+            width: 100%;
         }
-        .meta-item {
-            display: flex;
-            align-items: center;
-            color: #999;
-            font-size: 13px;
-        }
-        .meta-item span {
-            margin-right: 16px;
-        }
-        .read-more {
-            color: #e54d42;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .read-more:hover {
-            color: #d43f34;
-        }
-        .no-results {
-            text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            font-size: 16px;
-        }
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .header {
-                height: auto;
-                padding: 10px 0;
+        
+        /* 移动端响应式样式 */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
             }
-            .header-content {
+            
+            .nav-items {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background-color: #000;
                 flex-direction: column;
-                text-align: center;
-                gap: 15px;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 40px;
+                gap: 30px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
             }
-            .search-container {
-                max-width: 100%;
+            
+            .nav-items.is-open {
+                transform: translateX(0);
             }
-            .card-content {
-                padding: 20px;
+            
+            .navbar {
+                padding: 0 20px;
             }
-            .card-title {
+            
+            .nav-item {
                 font-size: 18px;
+                padding: 15px 0;
             }
         }
-        @media (max-width: 480px) {
-            body {
-                padding: 0 0 20px;
-            }
-            .header {
-                margin-bottom: 30px;
-            }
-            .header-content {
-                padding: 0 16px;
-            }
-            .site-title {
-                font-size: 18px;
-            }
-            .site-subtitle {
-                font-size: 11px;
-            }
-            .search-input, .search-button {
-                padding: 8px 14px;
-                height: 32px;
-            }
-            .container {
-                padding: 0 16px;
-            }
-            .card-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            .card-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            .meta-item {
-                flex-wrap: wrap;
-            }
-            .meta-item span {
-                margin-right: 12px;
-                margin-bottom: 4px;
-            }
+        
+        .top-block {
+            position: fixed;
+            top: 60px; /* 为导航栏留出空间 */
+            left: 0;
+            width: 100%;
+            height: calc(50vh - 60px); /* 调整高度 */
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 120px;
+            font-weight: bold;
+            font-family: sans-serif;
+            z-index: 1;
+        }
+        
+        .bottom-block {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: calc(25vh - 30px); /* 调整padding */
+            font-size: 120px;
+            font-weight: bold;
+            font-family: sans-serif;
+            z-index: 2;
+            margin-top: calc(50vh - 60px); /* 调整margin-top */
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="site-info">
-                <h1 class="site-title">技术博客</h1>
-                <p class="site-subtitle">分享技术、设计与生活感悟</p>
-            </div>
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="搜索文章..." id="searchInput">
-                <button class="search-button" id="searchButton">搜索</button>
-            </div>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-title">BAINANO。</div>
+        <div class="nav-items">
+            <a href="#" class="nav-item">首页</a>
+            <a href="#" class="nav-item">博客</a>
         </div>
-    </header>
+        <a href="#0" class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </nav>
     
-    <div class="container">
-        <div id="blogContainer">
-            <!-- 博客卡片 1 -->
-            <div class="blog-card" data-title="前端开发中的性能优化技巧" data-category="技术分享" data-content="在现代Web开发中，性能优化是一个永恒的话题。本文将分享一些实用的前端性能优化技巧，包括资源加载优化、渲染优化、JavaScript执行优化等方面，帮助你构建更快、更流畅的Web应用。">
-                <div class="card-content">
-                    <div class="card-header">
-                        <span class="card-category">技术分享</span>
-                        <span class="card-date">2024-01-15</span>
-                    </div>
-                    <h3 class="card-title"><a href="article-detail.html">前端开发中的性能优化技巧</a></h3>
-                    <p class="card-excerpt">在现代Web开发中，性能优化是一个永恒的话题。本文将分享一些实用的前端性能优化技巧，包括资源加载优化、渲染优化、JavaScript执行优化等方面，帮助你构建更快、更流畅的Web应用。</p>
-                    <div class="card-meta">
-                        <div class="meta-item">
-                            <span>作者：技术博客</span>
-                        </div>
-                        <a href="article-detail.html" class="read-more">阅读全文</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 博客卡片 2 -->
-            <div class="blog-card" data-title="2024年UI设计趋势预测" data-category="设计灵感" data-content="随着设计工具和技术的不断发展，UI设计趋势也在不断演变。本文将预测2024年可能流行的UI设计趋势，包括色彩搭配、排版设计、动效设计等方面，为你的设计工作提供参考。">
-                <div class="card-content">
-                    <div class="card-header">
-                        <span class="card-category">设计灵感</span>
-                        <span class="card-date">2024-01-12</span>
-                    </div>
-                    <h3 class="card-title"><a href="#">2024年UI设计趋势预测</a></h3>
-                    <p class="card-excerpt">随着设计工具和技术的不断发展，UI设计趋势也在不断演变。本文将预测2024年可能流行的UI设计趋势，包括色彩搭配、排版设计、动效设计等方面，为你的设计工作提供参考。</p>
-                    <div class="card-meta">
-                        <div class="meta-item">
-                            <span>作者：设计专栏</span>
-                        </div>
-                        <a href="#" class="read-more">阅读全文</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 博客卡片 3 -->
-            <div class="blog-card" data-title="程序员的高效工作方式" data-category="生活感悟" data-content="作为一名程序员，如何提高工作效率是我们经常思考的问题。本文将分享一些个人的高效工作经验，包括时间管理、任务规划、学习方法等方面，希望能对你有所帮助。">
-                <div class="card-content">
-                    <div class="card-header">
-                        <span class="card-category">生活感悟</span>
-                        <span class="card-date">2024-01-10</span>
-                    </div>
-                    <h3 class="card-title"><a href="#">程序员的高效工作方式</a></h3>
-                    <p class="card-excerpt">作为一名程序员，如何提高工作效率是我们经常思考的问题。本文将分享一些个人的高效工作经验，包括时间管理、任务规划、学习方法等方面，希望能对你有所帮助。</p>
-                    <div class="card-meta">
-                        <div class="meta-item">
-                            <span>作者：生活随笔</span>
-                        </div>
-                        <a href="#" class="read-more">阅读全文</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="top-block">
+        BAINANO。
     </div>
-
+    <div class="bottom-block">
+        2025
+    </div>
+    
     <script>
-        // 获取搜索相关的DOM元素
-        const searchInput = document.getElementById('searchInput');
-        const searchButton = document.getElementById('searchButton');
-        const blogContainer = document.getElementById('blogContainer');
-        const blogCards = document.querySelectorAll('.blog-card');
-        
-        // 搜索函数
-        function performSearch() {
-            const searchTerm = searchInput.value.trim().toLowerCase();
+        // 滚动监听，当白色div覆盖黑色div后显示导航栏标题
+        window.addEventListener('scroll', function() {
+            const navbarTitle = document.querySelector('.navbar-title');
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
             
-            // 如果搜索词为空，显示所有博客卡片
-            if (searchTerm === '') {
-                blogCards.forEach(card => {
-                    card.style.display = 'block';
-                });
-                return;
-            }
-            
-            // 遍历所有博客卡片进行匹配
-            let hasResults = false;
-            blogCards.forEach(card => {
-                // 获取卡片的标题、分类和内容
-                const title = card.getAttribute('data-title').toLowerCase();
-                const category = card.getAttribute('data-category').toLowerCase();
-                const content = card.getAttribute('data-content').toLowerCase();
-                
-                // 检查是否匹配搜索词
-                if (title.includes(searchTerm) || category.includes(searchTerm) || content.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    hasResults = true;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // 如果没有匹配结果，显示提示信息
-            if (!hasResults) {
-                blogContainer.innerHTML += `
-                    <div class="no-results">
-                        <p>没有找到与 "${searchInput.value}" 相关的文章</p>
-                    </div>
-                `;
-            }
-        }
-        
-        // 绑定搜索事件
-        searchButton.addEventListener('click', performSearch);
-        searchInput.addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                performSearch();
+            // 当滚动超过视口高度的25%时显示标题
+            if (scrollPosition > viewportHeight * 0.25) {
+                navbarTitle.classList.add('visible');
+            } else {
+                navbarTitle.classList.remove('visible');
             }
         });
         
-        // 清空搜索框时恢复所有内容
-        searchInput.addEventListener('input', function() {
-            if (this.value === '') {
-                // 移除可能存在的"无结果"提示
-                const noResults = document.querySelector('.no-results');
-                if (noResults) {
-                    noResults.remove();
-                }
+        // 移动端菜单切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navItems = document.querySelector('.nav-items');
+            
+            if (menuToggle && navItems) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    menuToggle.classList.toggle('is-clicked');
+                    navItems.classList.toggle('is-open');
+                });
                 
-                // 显示所有卡片
-                blogCards.forEach(card => {
-                    card.style.display = 'block';
+                // 点击导航项后关闭菜单
+                const navLinks = navItems.querySelectorAll('.nav-item');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.classList.remove('is-clicked');
+                        navItems.classList.remove('is-open');
+                    });
+                });
+                
+                // 点击菜单外部关闭菜单
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.navbar')) {
+                        menuToggle.classList.remove('is-clicked');
+                        navItems.classList.remove('is-open');
+                    }
                 });
             }
         });
