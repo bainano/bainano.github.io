@@ -1,0 +1,413 @@
+.plan-detail-container {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 0 20px;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.plan-header h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.plan-header p {
+    font-size: 20px;
+    color: #666;
+}
+
+.plan-content {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    padding: 40px;
+}
+
+.plan-section {
+    margin-bottom: 50px;
+}
+
+.plan-section:last-child {
+    margin-bottom: 0;
+}
+
+.plan-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.plan-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #000;
+    border-radius: 2px;
+}
+
+.section-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.section-content ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.section-content li {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    gap: 20px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #000;
+}
+
+/* 页脚 */
+.page-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaecef;
+    margin-top: 40px;
+    color: #586069;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.benefit-card {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.benefit-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.benefit-card p {
+    font-size: 16px;
+    margin: 0;
+    color: #666;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    background: #000;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    width: 80px;
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.timeline-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.faq-item p {
+    font-size: 16px;
+    margin: 0;
+    color: #666;
+    padding-left: 20px;
+    border-left: 3px solid #eee;
+    padding: 10px 0 10px 20px;
+}
+
+.cta-section {
+    text-align: center;
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 60px 40px !important;
+    margin-top: 50px;
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 18px 45px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .plan-detail-container {
+        margin-top: 80px;
+        padding: 0 15px;
+    }
+    
+    .plan-header h1 {
+        font-size: 36px;
+    }
+    
+    .plan-header p {
+        font-size: 18px;
+    }
+    
+    .plan-content {
+        padding: 30px 20px;
+    }
+    
+    .plan-section h2 {
+        font-size: 28px;
+    }
+    
+    .section-content p,
+    .section-content li {
+        font-size: 16px;
+    }
+    
+    .steps {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .step {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .timeline-date {
+        position: static;
+        margin-bottom: 15px;
+    }
+    
+    .timeline {
+        padding-left: 0;
+    }
+    
+    .timeline::before {
+        display: none;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cta-section {
+        padding: 40px 20px !important;
+    }
+    
+    .cta-section h2 {
+        font-size: 28px;
+    }
+    
+    .cta-section p {
+        font-size: 18px;
+    }
+    
+    .cta-button {
+        padding: 15px 35px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .plan-detail-container {
+        margin-top: 70px;
+    }
+    
+    .plan-header h1 {
+        font-size: 32px;
+    }
+    
+    .plan-header p {
+        font-size: 16px;
+    }
+    
+    .plan-section h2 {
+        font-size: 24px;
+    }
+    
+    .section-content p,
+    .section-content li {
+        font-size: 15px;
+    }
+    
+    .benefit-card {
+        padding: 20px;
+    }
+    
+    .benefit-card h3 {
+        font-size: 18px;
+    }
+    
+    .benefit-card p {
+        font-size: 14px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+    
+    .timeline-content p {
+        font-size: 14px;
+    }
+    
+    .faq-item h3 {
+        font-size: 18px;
+    }
+    
+    .faq-item p {
+        font-size: 14px;
+    }
+    
+    .cta-section h2 {
+        font-size: 24px;
+    }
+    
+    .cta-section p {
+        font-size: 16px;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}

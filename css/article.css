@@ -1,0 +1,412 @@
+/* 文章页面样式 */
+.article-container {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 0 20px;
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* 文章标题和信息区域 */
+.article-info {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaecef;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    color: #24292e;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    color: #6a737d;
+    font-size: 0.9rem;
+    padding: 1rem;
+    background-color: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+}
+
+.article-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.article-meta strong {
+    color: #24292e;
+    margin-right: 5px;
+}
+
+.article-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #e3f2fd;
+    color: #0366d6;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: normal;
+}
+
+.article-category strong {
+    color: inherit;
+    margin-right: 2px;
+}
+
+/* 目录样式 */
+.table-of-contents {
+    background-color: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.toc-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #24292e;
+}
+
+.toc-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.toc-sublist {
+    list-style: none;
+    padding-left: 1.2rem;
+    margin: 0.3rem 0;
+}
+
+.toc-item {
+    margin: 0.3rem 0;
+}
+
+.toc-link {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    color: #586069;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* 悬停状态 */
+.toc-link:hover {
+    color: #0366d6;
+    background-color: #e3f2fd;
+    text-decoration: none;
+}
+
+/* 激活状态 */
+.toc-link.active {
+    color: #24292e;
+    font-weight: 600;
+    background-color: #e3f2fd;
+    border-left: 3px solid #0366d6;
+    padding-left: 0.8rem;
+}
+
+/* 键盘导航焦点状态 */
+.toc-link:focus {
+    outline: 2px solid #0366d6;
+    outline-offset: 2px;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 在宽屏设备上使用Grid布局，目录固定在左侧 */
+@media screen and (min-width: 1200px) {
+    .article-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 50px;
+        max-width: 1400px; /* 增加最大宽度，适应更宽的屏幕 */
+    }
+    
+    .table-of-contents {
+        position: sticky;
+        top: 120px;
+        align-self: start;
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+        margin-bottom: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 添加轻微阴影，增强层次感 */
+        border: 1px solid #eaecef;
+        background-color: #ffffff;
+    }
+    
+    /* 优化目录项间距 */
+    .toc-item {
+        margin: 0.2rem 0;
+    }
+    
+    .toc-link {
+        padding: 0.5rem 0.7rem;
+        border-radius: 6px;
+    }
+    
+    /* 优化激活状态样式 */
+    .toc-link.active {
+        padding-left: 0.9rem;
+    }
+    
+    /* 自定义滚动条 */
+    .table-of-contents::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .table-of-contents::-webkit-scrollbar-track {
+        background: #f8f9fa;
+        border-radius: 4px;
+    }
+    
+    .table-of-contents::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .table-of-contents::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
+    }
+    
+    /* 优化文章内容区域的宽度 */
+    .article-content {
+        max-width: 800px;
+    }
+}
+
+/* 超宽屏幕适配（≥1600px） */
+@media screen and (min-width: 1600px) {
+    .article-container {
+        max-width: 1600px;
+        grid-template-columns: 320px 1fr; /* 增加目录宽度 */
+        gap: 60px;
+    }
+    
+    .table-of-contents {
+        font-size: 1rem;
+    }
+    
+    .article-content {
+        max-width: 900px;
+    }
+}
+
+/* 平板设备样式调整 */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .article-container {
+        max-width: 900px;
+    }
+    
+    .table-of-contents {
+        padding: 1.2rem;
+    }
+}
+
+/* 移动端样式调整 */
+@media screen and (max-width: 767px) {
+    .article-container {
+        margin-top: 80px; /* 调整顶部间距，避免与导航栏重叠 */
+    }
+    
+    .article-title {
+        font-size: 1.8rem;
+    }
+    
+    .article-meta {
+        gap: 15px;
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .table-of-contents {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .toc-title {
+        font-size: 1.1rem;
+    }
+    
+    .toc-link {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .toc-sublist {
+        padding-left: 1rem;
+    }
+}
+
+.article-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+.article-content {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+    position: relative;
+    margin: 30px 0 20px 0;
+    color: #333;
+    font-weight: 600;
+    scroll-margin-top: 80px; /* 为固定导航栏留出空间 */
+}
+
+.article-content h2 {
+    font-size: 1.8rem;
+}
+
+/* 标题锚点样式 */
+.heading-anchor {
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+    padding: 0 5px;
+}
+
+/* 鼠标悬停时显示锚点 */
+.article-content h1:hover .heading-anchor,
+.article-content h2:hover .heading-anchor,
+.article-content h3:hover .heading-anchor,
+.article-content h4:hover .heading-anchor,
+.article-content h5:hover .heading-anchor,
+.article-content h6:hover .heading-anchor {
+    opacity: 1;
+    color: #007bff;
+}
+
+/* 点击锚点时改变颜色 */
+.heading-anchor:hover {
+    color: #0056b3 !important;
+    text-decoration: none;
+}
+
+/* 在小屏幕上调整锚点位置 */
+@media screen and (max-width: 768px) {
+    .heading-anchor {
+        left: -20px;
+        font-size: 0.7em;
+    }
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+
+
+.article-footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+/* 页脚 */
+.page-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaecef;
+    margin-top: 40px;
+    color: #586069;
+    font-size: 0.9rem;
+}
+
+.tag {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .article-container {
+        margin-top: 80px;
+        padding: 0 15px;
+    }
+    
+    .article-title {
+        font-size: 2rem;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .article-content {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .article-container {
+        margin-top: 70px;
+        padding: 0 10px;
+    }
+    
+    .article-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* 评论区样式 */
+.comment-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+/* 在宽屏设备上调整评论区宽度，与文章内容保持一致 */
+@media screen and (min-width: 1200px) {
+    .comment-section {
+        max-width: 800px;
+    }
+}
+
+/* 超宽屏幕适配（≥1600px） */
+@media screen and (min-width: 1600px) {
+    .comment-section {
+        max-width: 900px;
+    }
+}

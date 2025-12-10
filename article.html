@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试文章</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/article.css">
+    <style>
+        .navbar-title {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 集成本网站标准header组件 -->
+    <nav class="navbar">
+        <div class="navbar-title">BAINANO。</div>
+        <div class="nav-items">
+            <a href="index.html" class="nav-item">首页</a>
+            <a href="blog-list.html" class="nav-item">博客</a>
+        </div>
+        <a href="#0" class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </nav>
+
+    <!-- 文章容器 - 使用data属性配置文章组件 -->
+    <div class="article-container" data-article-component data-markdown-path="markdown/test-markdown.md">
+        <!-- 文章内容区域 -->
+        <div class="article-content">
+            <!-- Markdown内容将被渲染到这里 -->
+        </div>
+    </div>
+
+    <!-- 评论区 -->
+    <div class="comment-section">
+        <script src="https://giscus.app/client.js"
+                data-repo="bainano/bainano.github.io"
+                data-repo-id="R_kgDOQkcl9w"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOQkcl984Czg4l"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="preferred_color_scheme"
+                data-lang="zh-CN"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+
+    <!-- 引入marked.js库 -->
+    <script src="js/marked.min.js"></script>
+    <!-- 引入文章组件 -->
+    <script src="js/article-component.js"></script>
+    
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <p>&copy; 2025 BAINANO。保留所有权利。</p>
+    </footer>
+</body>
+</html>

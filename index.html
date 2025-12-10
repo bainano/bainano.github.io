@@ -3,229 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主页设计</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            height: auto;
-            overflow-x: hidden;
-            position: relative;
-            scrollbar-width: none; /* Firefox */
-        }
-        
-        body::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Edge */
-        }
-        
-        html {
-            scrollbar-width: none; /* Firefox */
-        }
-        
-        html::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Edge */
-        }
-        
-        /* 导航栏样式 */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 1000;
-            padding: 0 40px;
-        }
-        
-        /* 移动端菜单按钮 */
-        .menu-toggle {
-            display: none;
-            position: relative;
-            width: 30px;
-            height: 24px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        .menu-toggle span {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #fff;
-            transition: all 0.3s ease;
-        }
-        
-        .menu-toggle span:nth-child(1) {
-            top: 0;
-        }
-        
-        .menu-toggle span:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .menu-toggle span:nth-child(3) {
-            bottom: 0;
-        }
-        
-        /* 菜单打开状态 */
-        .menu-toggle.is-clicked span:nth-child(1) {
-            transform: rotate(45deg);
-            top: 50%;
-            margin-top: -1px;
-        }
-        
-        .menu-toggle.is-clicked span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .menu-toggle.is-clicked span:nth-child(3) {
-            transform: rotate(-45deg);
-            bottom: 50%;
-            margin-bottom: -1px;
-        }
-        
-        /* 导航栏标题 */
-        .navbar-title {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-            font-family: sans-serif;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        
-        .navbar-title.visible {
-            opacity: 1;
-        }
-        
-        /* 导航项容器 */
-        .nav-items {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .nav-item {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            font-family: sans-serif;
-            position: relative;
-            padding: 10px 0;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-item:hover {
-            color: #ccc;
-        }
-        
-        /* 横线动画效果 */
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #fff;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-item:hover::after {
-            width: 100%;
-        }
-        
-        /* 移动端响应式样式 */
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-items {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 60px);
-                background-color: #000;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 40px;
-                gap: 30px;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-            }
-            
-            .nav-items.is-open {
-                transform: translateX(0);
-            }
-            
-            .navbar {
-                padding: 0 20px;
-            }
-            
-            .nav-item {
-                font-size: 18px;
-                padding: 15px 0;
-            }
-        }
-        
-        .top-block {
-            position: fixed;
-            top: 60px; /* 为导航栏留出空间 */
-            left: 0;
-            width: 100%;
-            height: calc(50vh - 60px); /* 调整高度 */
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 120px;
-            font-weight: bold;
-            font-family: sans-serif;
-            z-index: 1;
-        }
-        
-        .bottom-block {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background-color: #fff;
-            color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: calc(25vh - 30px); /* 调整padding */
-            font-size: 120px;
-            font-weight: bold;
-            font-family: sans-serif;
-            z-index: 2;
-            margin-top: calc(50vh - 60px); /* 调整margin-top */
-        }
-    </style>
+    <title>首页 - BAINANO</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="navbar-title">BAINANO。</div>
         <div class="nav-items">
-            <a href="#" class="nav-item">首页</a>
-            <a href="#" class="nav-item">博客</a>
+            <a href="index.html" class="nav-item">首页</a>
+            <a href="blog-list.html" class="nav-item">博客</a>
         </div>
         <a href="#0" class="menu-toggle">
             <span></span>
@@ -235,16 +22,30 @@
     </nav>
     
     <div class="top-block">
-        BAINANO。
+        <div class="top-block-text">BAINANO。</div>
     </div>
     <div class="bottom-block">
-        2025
+        <div class="year">2025</div>
+        <div class="slogan">专注内容的宝藏github博客</div>
+        <div class="plan-container">
+            <div class="plan-item">
+                <a href="plans/blog-cooperation.html">
+                    <h3>博客共创计划</h3>
+                </a>
+            </div>
+            <div class="plan-item">
+                <a href="plans/public-welfare.html">
+                    <h3>公益宣传计划</h3>
+                </a>
+            </div>
+        </div>
     </div>
     
     <script>
         // 滚动监听，当白色div覆盖黑色div后显示导航栏标题
         window.addEventListener('scroll', function() {
             const navbarTitle = document.querySelector('.navbar-title');
+            const topBlockText = document.querySelector('.top-block-text');
             const scrollPosition = window.scrollY;
             const viewportHeight = window.innerHeight;
             
@@ -254,6 +55,12 @@
             } else {
                 navbarTitle.classList.remove('visible');
             }
+            
+            // 根据滚动位置计算文本移动距离
+            // 向上滚动时文本向右移动，最大移动距离为100px
+            const maxMoveDistance = 100;
+            const moveDistance = Math.min(scrollPosition / viewportHeight * maxMoveDistance, maxMoveDistance);
+            topBlockText.style.transform = `translateX(${moveDistance}px)`;
         });
         
         // 移动端菜单切换功能
@@ -287,5 +94,10 @@
             }
         });
     </script>
+    
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <p>&copy; 2025 BAINANO。保留所有权利。</p>
+    </footer>
 </body>
 </html>

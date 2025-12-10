@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客列表 - BAINANO</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog-list.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-title">BAINANO。</div>
+        <div class="nav-items">
+            <a href="index.html" class="nav-item">首页</a>
+            <a href="blog-list.html" class="nav-item">博客</a>
+        </div>
+        <a href="#0" class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </nav>
+
+    <!-- 页面标题 -->
+    <div class="page-header">
+        <h1>博客文章</h1>
+        <p>探索我们的最新文章和深度内容</p>
+    </div>
+
+    <!-- 博客列表容器 -->
+    <div class="blog-list-container">
+        <!-- 搜索和筛选区域 -->
+        <div class="blog-filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索文章...">
+                <button id="searchButton">搜索</button>
+            </div>
+            <div class="category-filter">
+                <select id="categoryFilter">
+                    <option value="all">所有分类</option>
+                    <option value="tech">技术</option>
+                    <option value="design">设计</option>
+                    <option value="life">生活</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 博客文章列表 -->
+        <div class="blog-posts" id="blogPostsContainer">
+            <!-- 文章项将通过JavaScript动态生成 -->
+        </div>
+
+        <!-- 分页 -->
+        <div class="pagination" id="paginationContainer">
+            <!-- 分页按钮将通过JavaScript动态生成 -->
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <p>&copy; 2025 BAINANO。保留所有权利。</p>
+    </footer>
+
+    <script>
+        // 滚动监听，当滚动到一定位置时显示导航栏标题
+        window.addEventListener('scroll', function() {
+            const navbarTitle = document.querySelector('.navbar-title');
+            const scrollPosition = window.scrollY;
+            
+            // 当滚动超过页面标题区域时显示导航栏标题
+            const pageHeader = document.querySelector('.page-header');
+            const pageHeaderHeight = pageHeader ? pageHeader.offsetHeight : 0;
+            
+            if (scrollPosition > pageHeaderHeight) {
+                navbarTitle.classList.add('visible');
+            } else {
+                navbarTitle.classList.remove('visible');
+            }
+        });
+    </script>
+    
+    <!-- 引入博客列表脚本 -->
+    <script src="js/blog-list.js"></script>
+</body>
+</html>

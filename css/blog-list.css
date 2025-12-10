@@ -1,0 +1,334 @@
+/* 博客列表页面样式 */
+
+/* 页面标题区域 */
+.page-header {
+    margin-top: 60px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaecef;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #24292e;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #586069;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 博客列表容器 */
+.blog-list-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 搜索和筛选区域 */
+.blog-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-bottom: 2px solid #e1e4e8;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #0366d6;
+    box-shadow: 0 2px 4px rgba(3, 102, 214, 0.2);
+}
+
+.search-box input:hover {
+    border-color: #0366d6;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background-color: #0366d6;
+    color: white;
+    border: none;
+    border-bottom: 2px solid #0366d6;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-box button:hover {
+    background-color: #0256bb;
+    border-bottom-color: #0256bb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(3, 102, 214, 0.3);
+}
+
+.search-box button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(3, 102, 214, 0.2);
+}
+
+.category-filter select {
+    padding: 10px 15px;
+    border: none;
+    border-bottom: 2px solid #e1e4e8;
+    background-color: white;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236a737d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    appearance: none;
+    padding-right: 40px;
+}
+
+.category-filter select:focus {
+    border-color: #0366d6;
+    box-shadow: 0 2px 4px rgba(3, 102, 214, 0.2);
+}
+
+.category-filter select:hover {
+    border-color: #0366d6;
+}
+
+/* 博客文章列表 */
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* 单个博客文章卡片 */
+.blog-post-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #d1d5da;
+}
+
+.blog-post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.blog-post-content {
+    padding: 20px;
+}
+
+.blog-post-category {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #e3f2fd;
+    color: #0366d6;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-post-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #24292e;
+}
+
+.blog-post-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.blog-post-title a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0366d6;
+    transition: width 0.3s ease;
+}
+
+.blog-post-title a:hover {
+    color: #0366d6;
+}
+
+.blog-post-title a:hover::after {
+    width: 100%;
+}
+
+.blog-post-excerpt {
+    color: #586069;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.blog-post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #6a737d;
+    padding-top: 15px;
+    border-top: 1px solid #eaecef;
+}
+
+.blog-post-date {
+    display: flex;
+    align-items: center;
+}
+
+.blog-post-read-time {
+    display: flex;
+    align-items: center;
+}
+
+/* 分页 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.pagination-button {
+    padding: 8px 15px;
+    border: 1px solid #e1e4e8;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.pagination-button:hover:not(.disabled) {
+    background-color: #f6f8fa;
+    border-color: #d1d5da;
+}
+
+.pagination-button.active {
+    background-color: #0366d6;
+    color: white;
+    border-color: #0366d6;
+}
+
+.pagination-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 页脚 */
+.page-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaecef;
+    margin-top: 40px;
+    color: #586069;
+    font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .page-header {
+        margin-top: 70px;
+        padding: 30px 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .blog-list-container {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+    
+    .blog-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .blog-posts {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .blog-post-content {
+        padding: 15px;
+    }
+    
+    .blog-post-title {
+        font-size: 1.2rem;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .blog-post-card {
+        border-radius: 6px;
+    }
+    
+    .blog-post-content {
+        padding: 12px;
+    }
+    
+    .blog-post-title {
+        font-size: 1.1rem;
+    }
+}
