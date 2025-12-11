@@ -845,12 +845,12 @@ class AudioPlayer {
         
         switch (this.playMode) {
             case 'sequence':
-                modeHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"></path></svg>';
-                modeTitle = '顺序播放';
+                modeHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 24 24"><path fill="currentColor" d="M17 17H7v-3l-4 4l4 4v-3h12v-6h-2M7 7h10v3l4-4l-4-4v3H5v6h2z"></path></svg>';
+                modeTitle = '循环播放';
                 break;
             case 'random':
-                modeHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 7h10v3l4-4l-4-4v3H5v6h2zm10 10H7v-3l-4 4l4 4v-3h12v-6h-2z"></path></svg>';
-                modeTitle = '循环播放';
+                modeHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 20 20"><path fill="currentColor" d="M18 6.01L14 9V7h-4l-5 8H2v-2h2l5-8h5V3zM2 5h3l1.15 2.17l-1.12 1.8L4 7H2zm16 9.01L14 17v-2H9l-1.15-2.17l1.12-1.8L10 13h4v-2z"></path></svg>';
+                modeTitle = '随机播放';
                 break;
             case 'single':
                 modeHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 7h10v3l4-4l-4-4v3H5v6h2zm10 10H7v-3l-4 4l4 4v-3h12v-6h-2zm-4-2V9h-1l-2 1v1h1.5v4z"></path></svg>';
