@@ -1,1 +1,25 @@
-ewogICJjYXRlZ29yaWVzIjogWwogICAgewogICAgICAibmFtZSI6ICLnlJ/mtLsiLAogICAgICAiZGVzY3JpcHRpb24iOiAi6K6w5b2V5pel5bi455Sf5rS75Lit55qE54K55ru05oSf5oKf5LiO576O5aW9556s6Ze0IiwKICAgICAgInBvc3RJZHMiOiBbCiAgICAgICAgIjIwMjYwMzA3LTEiCiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJuYW1lIjogIuaXheihjCIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICLliIbkuqvml4XpgJTkuK3nmoTpo47mma/jgIHmlYXkuovkuI7lv4PngbXop6bliqgiLAogICAgICAicG9zdElkcyI6IFsKICAgICAgICAiMjAyNjAyMjgtMSIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAi6ZiF6K+7IiwKICAgICAgImRlc2NyaXB0aW9uIjogIuivu+S5pueslOiusOOAgeWlveS5puaOqOiNkOS4jumYheivu+W/g+W+lyIsCiAgICAgICJwb3N0SWRzIjogWwogICAgICAgICIyMDI2MDIxNS0xIgogICAgICBdCiAgICB9CiAgXQp9
+{
+  "categories": [
+    {
+      "name": "生活",
+      "description": "记录日常生活中的点滴感悟与美好瞬间",
+      "postIds": [
+        "20260307-1"
+      ]
+    },
+    {
+      "name": "旅行",
+      "description": "分享旅途中的风景、故事与心灵触动",
+      "postIds": [
+        "20260228-1"
+      ]
+    },
+    {
+      "name": "阅读",
+      "description": "读书笔记、好书推荐与阅读心得",
+      "postIds": [
+        "20260215-1"
+      ]
+    }
+  ]
+}

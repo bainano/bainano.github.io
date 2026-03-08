@@ -1,1 +1,73 @@
-LyoqCiAqIOmAmueUqOW3peWFt+WHveaVsOW6kwogKi8KCi8qKgogKiDojrflj5bln7rnoYDot6/lvoQKICog5qC55o2u5b2T5YmN6aG16Z2i6Lev5b6E6L+U5Zue5q2j56Gu55qE5Z+656GA6Lev5b6ECiAqLwpmdW5jdGlvbiBnZXRCYXNlUGF0aCgpIHsKICBjb25zdCBwYXRoID0gd2luZG93LmxvY2F0aW9uLnBhdGhuYW1lOwogIGlmIChwYXRoLmluY2x1ZGVzKCcvcG9zdC8nKSB8fCBwYXRoLmluY2x1ZGVzKCcvYWJvdXQvJykgfHwgcGF0aC5pbmNsdWRlcygnL2ZyaWVuZHMvJykgfHwgcGF0aC5pbmNsdWRlcygnL2NhdGVnb3JpZXMvJykpIHsKICAgIHJldHVybiAnLi4vJzsKICB9CiAgcmV0dXJuICcnOwp9CgovKioKICog5qC85byP5YyW5pel5pyfCiAqIOWwhuaXpeacn+Wtl+espuS4suagvOW8j+WMluS4uiAiWVlZWeW5tE1N5pyIRETml6UgSEg6bW0iCiAqLwpmdW5jdGlvbiBmb3JtYXREYXRlKGRhdGVTdHJpbmcpIHsKICBjb25zdCBkYXRlID0gbmV3IERhdGUoZGF0ZVN0cmluZyk7CiAgY29uc3QgaG91cnMgPSBTdHJpbmcoZGF0ZS5nZXRIb3VycygpKS5wYWRTdGFydCgyLCAnMCcpOwogIGNvbnN0IG1pbnV0ZXMgPSBTdHJpbmcoZGF0ZS5nZXRNaW51dGVzKCkpLnBhZFN0YXJ0KDIsICcwJyk7CiAgcmV0dXJuIGAke2RhdGUuZ2V0RnVsbFllYXIoKX3lubQke2RhdGUuZ2V0TW9udGgoKSArIDF95pyIJHtkYXRlLmdldERhdGUoKX3ml6UgJHtob3Vyc306JHttaW51dGVzfWA7Cn0KCi8qKgogKiDoh6rliqjmiavmj4/mlofnq6AgSUQg5YiX6KGoCiAqIOWwneivleiOt+WPliBwb3N0cyDnm67lvZXkuIvnmoQgcG9zdC1pZHMuanNvbiDmlofku7YKICovCmFzeW5jIGZ1bmN0aW9uIHNjYW5Qb3N0SWRzKCkgewogIGNvbnN0IGJhc2UgPSBnZXRCYXNlUGF0aCgpOwogIHRyeSB7CiAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGAke2Jhc2V9cG9zdHMvcG9zdC1pZHMuanNvbmApOwogICAgaWYgKHJlc3BvbnNlLm9rKSB7CiAgICAgIHJldHVybiBhd2FpdCByZXNwb25zZS5qc29uKCk7CiAgICB9CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIGNvbnNvbGUuZXJyb3IoJ0ZhaWxlZCB0byBsb2FkIHBvc3QgSURzOicsIGVycm9yKTsKICB9CiAgcmV0dXJuIFtdOwp9CgovKioKICog5Yqg6L295paH56ug5YiX6KGoCiAqIOagueaNruaWh+eroElE5YiX6KGo5Yqg6L295paH56ug5YWD5pWw5o2u5bm25o6S5bqPCiAqLwphc3luYyBmdW5jdGlvbiBsb2FkUG9zdExpc3QocG9zdElkcywgb3B0aW9ucyA9IHt9KSB7CiAgY29uc3QgYmFzZSA9IGdldEJhc2VQYXRoKCk7CiAgY29uc3QgcG9zdHMgPSBbXTsKICBjb25zdCB7IGluY2x1ZGVJZ25vcmVkID0gZmFsc2UgfSA9IG9wdGlvbnM7CgogIGZvciAoY29uc3QgaWQgb2YgcG9zdElkcykgewogICAgdHJ5IHsKICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChgJHtiYXNlfXBvc3RzLyR7aWR9Lmpzb25gKTsKICAgICAgaWYgKHJlc3BvbnNlLm9rKSB7CiAgICAgICAgY29uc3QgcG9zdCA9IGF3YWl0IHJlc3BvbnNlLmpzb24oKTsKICAgICAgICBwb3N0LmlkID0gaWQ7CiAgICAgICAgaWYgKGluY2x1ZGVJZ25vcmVkIHx8ICFwb3N0Lmlnbm9yZSkgewogICAgICAgICAgcG9zdHMucHVzaChwb3N0KTsKICAgICAgICB9CiAgICAgIH0KICAgIH0gY2F0Y2ggKGVycm9yKSB7CiAgICAgIGNvbnNvbGUuZXJyb3IoYEZhaWxlZCB0byBsb2FkIHBvc3QgJHtpZH06YCwgZXJyb3IpOwogICAgfQogIH0KCiAgLy8g5oyJ5Yib5bu65pe26Ze05YCS5bqP5o6S5bqPCiAgcG9zdHMuc29ydCgoYSwgYikgPT4gbmV3IERhdGUoYi5jcmVhdGVkQXQpIC0gbmV3IERhdGUoYS5jcmVhdGVkQXQpKTsKCiAgcmV0dXJuIHBvc3RzOwp9Cg==
+/**
+ * 通用工具函数库
+ */
+
+/**
+ * 获取基础路径
+ * 根据当前页面路径返回正确的基础路径
+ */
+function getBasePath() {
+  const path = window.location.pathname;
+  if (path.includes('/post/') || path.includes('/about/') || path.includes('/friends/') || path.includes('/categories/')) {
+    return '../';
+  }
+  return '';
+}
+
+/**
+ * 格式化日期
+ * 将日期字符串格式化为 "YYYY年MM月DD日 HH:mm"
+ */
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${hours}:${minutes}`;
+}
+
+/**
+ * 自动扫描文章 ID 列表
+ * 尝试获取 posts 目录下的 post-ids.json 文件
+ */
+async function scanPostIds() {
+  const base = getBasePath();
+  try {
+    const response = await fetch(`${base}posts/post-ids.json`);
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (error) {
+    console.error('Failed to load post IDs:', error);
+  }
+  return [];
+}
+
+/**
+ * 加载文章列表
+ * 根据文章ID列表加载文章元数据并排序
+ */
+async function loadPostList(postIds, options = {}) {
+  const base = getBasePath();
+  const posts = [];
+  const { includeIgnored = false } = options;
+
+  for (const id of postIds) {
+    try {
+      const response = await fetch(`${base}posts/${id}.json`);
+      if (response.ok) {
+        const post = await response.json();
+        post.id = id;
+        if (includeIgnored || !post.ignore) {
+          posts.push(post);
+        }
+      }
+    } catch (error) {
+      console.error(`Failed to load post ${id}:`, error);
+    }
+  }
+
+  // 按创建时间倒序排序
+  posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+  return posts;
+}

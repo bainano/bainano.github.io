@@ -1,1 +1,49 @@
-LyoqCiAqIOWFs+S6jumhtemdouWGheWuueWKoOi9veWZqAogKiDku44gYWJvdXQubWQg5Yqg6L295bm25riy5p+T5YaF5a65CiAqLwoKLyoqCiAqIOWKoOi9veaWh+eroOaVsOmHjwogKi8KYXN5bmMgZnVuY3Rpb24gbG9hZFBvc3RDb3VudCgpIHsKICBjb25zdCBwb3N0Q291bnRFbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwb3N0Q291bnQnKTsKICBpZiAoIXBvc3RDb3VudEVsKSByZXR1cm47CgogIHRyeSB7CiAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKCcuLi9wb3N0cy9wb3N0LWlkcy5qc29uJyk7CiAgICBpZiAocmVzcG9uc2Uub2spIHsKICAgICAgY29uc3QgcG9zdElkcyA9IGF3YWl0IHJlc3BvbnNlLmpzb24oKTsKICAgICAgcG9zdENvdW50RWwudGV4dENvbnRlbnQgPSBwb3N0SWRzLmxlbmd0aDsKICAgIH0KICB9IGNhdGNoIChlcnJvcikgewogICAgY29uc29sZS5lcnJvcignRmFpbGVkIHRvIGxvYWQgcG9zdCBjb3VudDonLCBlcnJvcik7CiAgfQp9CgovKioKICog5Yqg6L29IGFib3V0Lm1kIOWGheWuuQogKi8KYXN5bmMgZnVuY3Rpb24gbG9hZEFib3V0Q29udGVudCgpIHsKICBjb25zdCBhYm91dEludHJvID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2Fib3V0SW50cm8nKTsKICBpZiAoIWFib3V0SW50cm8pIHJldHVybjsKCiAgdHJ5IHsKICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goJ2Fib3V0Lm1kJyk7CiAgICBpZiAoIXJlc3BvbnNlLm9rKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcignRmFpbGVkIHRvIGxvYWQgYWJvdXQubWQnKTsKICAgIH0KCiAgICBjb25zdCBjb250ZW50ID0gYXdhaXQgcmVzcG9uc2UudGV4dCgpOwogICAgYWJvdXRJbnRyby5pbm5lckhUTUwgPSBwYXJzZU1hcmtkb3duKGNvbnRlbnQpOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICBjb25zb2xlLmVycm9yKCdFcnJvciBsb2FkaW5nIGFib3V0IGNvbnRlbnQ6JywgZXJyb3IpOwogICAgYWJvdXRJbnRyby5pbm5lckhUTUwgPSAnPHAgY2xhc3M9Im1hcmtkb3duIiBzdHlsZT0iY29sb3I6IHZhcigtLWNvbG9yLXRleHQtbXV0ZWQpOyI+5Yqg6L295aSx6LSl77yM6K+356iN5ZCO6YeN6K+VPC9wPic7CiAgfQp9CgovLyDpobXpnaLliqDovb3lrozmiJDlkI7oh6rliqjliqDovb3lhoXlrrkKZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsICgpID0+IHsKICBsb2FkUG9zdENvdW50KCk7CiAgbG9hZEFib3V0Q29udGVudCgpOwp9KTsK
+/**
+ * 关于页面内容加载器
+ * 从 about.md 加载并渲染内容
+ */
+
+/**
+ * 加载文章数量
+ */
+async function loadPostCount() {
+  const postCountEl = document.getElementById('postCount');
+  if (!postCountEl) return;
+
+  try {
+    const response = await fetch('../posts/post-ids.json');
+    if (response.ok) {
+      const postIds = await response.json();
+      postCountEl.textContent = postIds.length;
+    }
+  } catch (error) {
+    console.error('Failed to load post count:', error);
+  }
+}
+
+/**
+ * 加载 about.md 内容
+ */
+async function loadAboutContent() {
+  const aboutIntro = document.getElementById('aboutIntro');
+  if (!aboutIntro) return;
+
+  try {
+    const response = await fetch('about.md');
+    if (!response.ok) {
+      throw new Error('Failed to load about.md');
+    }
+
+    const content = await response.text();
+    aboutIntro.innerHTML = parseMarkdown(content);
+  } catch (error) {
+    console.error('Error loading about content:', error);
+    aboutIntro.innerHTML = '<p class="markdown" style="color: var(--color-text-muted);">加载失败，请稍后重试</p>';
+  }
+}
+
+// 页面加载完成后自动加载内容
+document.addEventListener('DOMContentLoaded', () => {
+  loadPostCount();
+  loadAboutContent();
+});

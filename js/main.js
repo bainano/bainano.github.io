@@ -1,1 +1,164 @@
-LyoqCiAqIOWiqOiogOWNmuWuoiAtIOS4u+imgeS6pOS6kuiEmuacrAogKi8KCmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ0RPTUNvbnRlbnRMb2FkZWQnLCBmdW5jdGlvbigpIHsKICAvLyDnp7vliqjnq6/oj5zljZXliIfmjaIKICBpbml0TW9iaWxlTWVudSgpOwogIAogIC8vIOWvvOiIquagj+a7muWKqOaViOaenAogIGluaXROYXZiYXJTY3JvbGwoKTsKICAKICAvLyDlubPmu5Hmu5rliqgKICBpbml0U21vb3RoU2Nyb2xsKCk7CiAgCiAgLy8g5Zu+54mH5oeS5Yqg6L295LyY5YyWCiAgaW5pdExhenlMb2FkKCk7Cn0pOwoKLyoqCiAqIOenu+WKqOerr+iPnOWNleWIh+aNogogKi8KZnVuY3Rpb24gaW5pdE1vYmlsZU1lbnUoKSB7CiAgY29uc3QgbWVudVRvZ2dsZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZW51VG9nZ2xlJyk7CiAgY29uc3QgbmF2TWVudSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCduYXZNZW51Jyk7CiAgCiAgaWYgKCFtZW51VG9nZ2xlIHx8ICFuYXZNZW51KSByZXR1cm47CiAgCiAgbWVudVRvZ2dsZS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIGZ1bmN0aW9uKCkgewogICAgbmF2TWVudS5jbGFzc0xpc3QudG9nZ2xlKCdhY3RpdmUnKTsKICAgIGRvY3VtZW50LmJvZHkuY2xhc3NMaXN0LnRvZ2dsZSgnbWVudS1vcGVuJyk7CiAgfSk7CiAgCiAgLy8g54K55Ye76I+c5Y2V6aG55ZCO5YWz6Zet6I+c5Y2VCiAgY29uc3QgbmF2TGlua3MgPSBuYXZNZW51LnF1ZXJ5U2VsZWN0b3JBbGwoJ2EnKTsKICBuYXZMaW5rcy5mb3JFYWNoKGxpbmsgPT4gewogICAgbGluay5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIGZ1bmN0aW9uKCkgewogICAgICBuYXZNZW51LmNsYXNzTGlzdC5yZW1vdmUoJ2FjdGl2ZScpOwogICAgICBkb2N1bWVudC5ib2R5LmNsYXNzTGlzdC5yZW1vdmUoJ21lbnUtb3BlbicpOwogICAgfSk7CiAgfSk7CiAgCiAgLy8g54K55Ye75aSW6YOo5YWz6Zet6I+c5Y2VCiAgZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbihlKSB7CiAgICBpZiAoIW1lbnVUb2dnbGUuY29udGFpbnMoZS50YXJnZXQpICYmICFuYXZNZW51LmNvbnRhaW5zKGUudGFyZ2V0KSkgewogICAgICBuYXZNZW51LmNsYXNzTGlzdC5yZW1vdmUoJ2FjdGl2ZScpOwogICAgICBkb2N1bWVudC5ib2R5LmNsYXNzTGlzdC5yZW1vdmUoJ21lbnUtb3BlbicpOwogICAgfQogIH0pOwp9CgovKioKICog5a+86Iiq5qCP5rua5Yqo5pWI5p6cCiAqLwpmdW5jdGlvbiBpbml0TmF2YmFyU2Nyb2xsKCkgewogIGNvbnN0IG5hdmJhciA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy5uYXZiYXInKTsKICBpZiAoIW5hdmJhcikgcmV0dXJuOwogIAogIGxldCBsYXN0U2Nyb2xsWSA9IHdpbmRvdy5zY3JvbGxZOwogIGxldCB0aWNraW5nID0gZmFsc2U7CiAgCiAgZnVuY3Rpb24gdXBkYXRlTmF2YmFyKCkgewogICAgY29uc3Qgc2Nyb2xsWSA9IHdpbmRvdy5zY3JvbGxZOwogICAgCiAgICAvLyDmu5rliqjotoXov4c1MHB45re75Yqg6Zi05b2x5pWI5p6cCiAgICBpZiAoc2Nyb2xsWSA+IDUwKSB7CiAgICAgIG5hdmJhci5zdHlsZS5ib3hTaGFkb3cgPSAnMCAxcHggMCByZ2JhKDAsIDAsIDAsIDAuMDUpJzsKICAgIH0gZWxzZSB7CiAgICAgIG5hdmJhci5zdHlsZS5ib3hTaGFkb3cgPSAnbm9uZSc7CiAgICB9CiAgICAKICAgIGxhc3RTY3JvbGxZID0gc2Nyb2xsWTsKICAgIHRpY2tpbmcgPSBmYWxzZTsKICB9CiAgCiAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Njcm9sbCcsIGZ1bmN0aW9uKCkgewogICAgaWYgKCF0aWNraW5nKSB7CiAgICAgIHJlcXVlc3RBbmltYXRpb25GcmFtZSh1cGRhdGVOYXZiYXIpOwogICAgICB0aWNraW5nID0gdHJ1ZTsKICAgIH0KICB9LCB7IHBhc3NpdmU6IHRydWUgfSk7Cn0KCi8qKgogKiDlubPmu5Hmu5rliqgKICovCmZ1bmN0aW9uIGluaXRTbW9vdGhTY3JvbGwoKSB7CiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnYVtocmVmXj0iIyJdJykuZm9yRWFjaChhbmNob3IgPT4gewogICAgYW5jaG9yLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgZnVuY3Rpb24oZSkgewogICAgICBjb25zdCB0YXJnZXRJZCA9IHRoaXMuZ2V0QXR0cmlidXRlKCdocmVmJyk7CiAgICAgIGlmICh0YXJnZXRJZCA9PT0gJyMnKSByZXR1cm47CiAgICAgIAogICAgICBjb25zdCB0YXJnZXRFbGVtZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcih0YXJnZXRJZCk7CiAgICAgIGlmICh0YXJnZXRFbGVtZW50KSB7CiAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgpOwogICAgICAgIHRhcmdldEVsZW1lbnQuc2Nyb2xsSW50b1ZpZXcoewogICAgICAgICAgYmVoYXZpb3I6ICdzbW9vdGgnLAogICAgICAgICAgYmxvY2s6ICdzdGFydCcKICAgICAgICB9KTsKICAgICAgfQogICAgfSk7CiAgfSk7Cn0KCi8qKgogKiDlm77niYfmh5LliqDovb3kvJjljJYKICovCmZ1bmN0aW9uIGluaXRMYXp5TG9hZCgpIHsKICAvLyDmo4Dmn6XmtY/op4jlmajmmK/lkKbmlK/mjIEgSW50ZXJzZWN0aW9uT2JzZXJ2ZXIKICBpZiAoISgnSW50ZXJzZWN0aW9uT2JzZXJ2ZXInIGluIHdpbmRvdykpIHsKICAgIC8vIOS4jeaUr+aMgeWImeebtOaOpeWKoOi9veaJgOacieWbvueJhwogICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnaW1nW2RhdGEtc3JjXScpLmZvckVhY2goaW1nID0+IHsKICAgICAgaW1nLnNyYyA9IGltZy5kYXRhc2V0LnNyYzsKICAgIH0pOwogICAgcmV0dXJuOwogIH0KICAKICBjb25zdCBpbWFnZU9ic2VydmVyID0gbmV3IEludGVyc2VjdGlvbk9ic2VydmVyKChlbnRyaWVzLCBvYnNlcnZlcikgPT4gewogICAgZW50cmllcy5mb3JFYWNoKGVudHJ5ID0+IHsKICAgICAgaWYgKGVudHJ5LmlzSW50ZXJzZWN0aW5nKSB7CiAgICAgICAgY29uc3QgaW1nID0gZW50cnkudGFyZ2V0OwogICAgICAgIGlmIChpbWcuZGF0YXNldC5zcmMpIHsKICAgICAgICAgIGltZy5zcmMgPSBpbWcuZGF0YXNldC5zcmM7CiAgICAgICAgICBpbWcucmVtb3ZlQXR0cmlidXRlKCdkYXRhLXNyYycpOwogICAgICAgIH0KICAgICAgICBvYnNlcnZlci51bm9ic2VydmUoaW1nKTsKICAgICAgfQogICAgfSk7CiAgfSwgewogICAgcm9vdE1hcmdpbjogJzUwcHggMHB4JywKICAgIHRocmVzaG9sZDogMC4wMQogIH0pOwogIAogIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2ltZ1tkYXRhLXNyY10nKS5mb3JFYWNoKGltZyA9PiB7CiAgICBpbWFnZU9ic2VydmVyLm9ic2VydmUoaW1nKTsKICB9KTsKfQoKLyoqCiAqIOeugOWNleeahOa3oeWFpeWKqOeUuwogKi8KZnVuY3Rpb24gZmFkZUluRWxlbWVudHMoKSB7CiAgY29uc3QgZWxlbWVudHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcuZmFkZS1pbicpOwogIAogIGlmICghKCdJbnRlcnNlY3Rpb25PYnNlcnZlcicgaW4gd2luZG93KSkgewogICAgZWxlbWVudHMuZm9yRWFjaChlbCA9PiBlbC5jbGFzc0xpc3QuYWRkKCd2aXNpYmxlJykpOwogICAgcmV0dXJuOwogIH0KICAKICBjb25zdCBvYnNlcnZlciA9IG5ldyBJbnRlcnNlY3Rpb25PYnNlcnZlcigoZW50cmllcykgPT4gewogICAgZW50cmllcy5mb3JFYWNoKGVudHJ5ID0+IHsKICAgICAgaWYgKGVudHJ5LmlzSW50ZXJzZWN0aW5nKSB7CiAgICAgICAgZW50cnkudGFyZ2V0LmNsYXNzTGlzdC5hZGQoJ3Zpc2libGUnKTsKICAgICAgICBvYnNlcnZlci51bm9ic2VydmUoZW50cnkudGFyZ2V0KTsKICAgICAgfQogICAgfSk7CiAgfSwgewogICAgdGhyZXNob2xkOiAwLjEKICB9KTsKICAKICBlbGVtZW50cy5mb3JFYWNoKGVsID0+IG9ic2VydmVyLm9ic2VydmUoZWwpKTsKfQoKLy8g6aG16Z2i5Yqg6L295a6M5oiQ5ZCO5omn6KGM5reh5YWl5Yqo55S7CmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ0RPTUNvbnRlbnRMb2FkZWQnLCBmYWRlSW5FbGVtZW50cyk7Cg==
+/**
+ * 墨言博客 - 主要交互脚本
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+  // 移动端菜单切换
+  initMobileMenu();
+  
+  // 导航栏滚动效果
+  initNavbarScroll();
+  
+  // 平滑滚动
+  initSmoothScroll();
+  
+  // 图片懒加载优化
+  initLazyLoad();
+});
+
+/**
+ * 移动端菜单切换
+ */
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (!menuToggle || !navMenu) return;
+  
+  menuToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+  });
+  
+  // 点击菜单项后关闭菜单
+  const navLinks = navMenu.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+  });
+  
+  // 点击外部关闭菜单
+  document.addEventListener('click', function(e) {
+    if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+  });
+}
+
+/**
+ * 导航栏滚动效果
+ */
+function initNavbarScroll() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  
+  function updateNavbar() {
+    const scrollY = window.scrollY;
+    
+    // 滚动超过50px添加阴影效果
+    if (scrollY > 50) {
+      navbar.style.boxShadow = '0 1px 0 rgba(0, 0, 0, 0.05)';
+    } else {
+      navbar.style.boxShadow = 'none';
+    }
+    
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+  
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbar);
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+/**
+ * 平滑滚动
+ */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+}
+
+/**
+ * 图片懒加载优化
+ */
+function initLazyLoad() {
+  // 检查浏览器是否支持 IntersectionObserver
+  if (!('IntersectionObserver' in window)) {
+    // 不支持则直接加载所有图片
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      img.src = img.dataset.src;
+    });
+    return;
+  }
+  
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.01
+  });
+  
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imageObserver.observe(img);
+  });
+}
+
+/**
+ * 简单的淡入动画
+ */
+function fadeInElements() {
+  const elements = document.querySelectorAll('.fade-in');
+  
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(el => el.classList.add('visible'));
+    return;
+  }
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  
+  elements.forEach(el => observer.observe(el));
+}
+
+// 页面加载完成后执行淡入动画
+document.addEventListener('DOMContentLoaded', fadeInElements);
