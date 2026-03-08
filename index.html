@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一个文艺风格的个人博客，记录生活与思考">
+  <title>墨言 | 文艺博客</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- 样式 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="logo">墨言</a>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html">文章</a></li>
+        <li><a href="about.html">关于</a></li>
+      </ul>
+      
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 页面头部 -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">文字的温度</h1>
+      <p class="page-subtitle">在喧嚣的世界里，寻找一片安静的角落</p>
+      <div class="divider"></div>
+    </div>
+  </header>
+
+  <!-- 博客列表 -->
+  <main class="blog-list">
+    <div class="container">
+      <div class="content-wrapper" id="postList">
+        <!-- 文章列表将由 JavaScript 从 postlist.json 加载渲染 -->
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">墨言</div>
+      <p class="footer-desc">
+        用文字记录生活，用镜头捕捉美好。<br>
+        在喧嚣的世界里，寻找一片安静的角落。
+      </p>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="index.html">文章</a>
+        <a href="about.html">关于</a>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="copyright">© 2026 墨言. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/utils.js"></script>
+  <script src="js/config-loader.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

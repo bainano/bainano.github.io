@@ -1,0 +1,63 @@
+{
+  "site": {
+    "name": "墨言",
+    "description": "一个文艺风格的个人博客，记录生活与思考"
+  },
+  "header": {
+    "title": "文字的温度",
+    "subtitle": "在喧嚣的世界里，寻找一片安静的角落"
+  },
+  "footer": {
+    "description": "用文字记录生活，用镜头捕捉美好。",
+    "descriptionLine2": "在喧嚣的世界里，寻找一片安静的角落。",
+    "copyright": "© 2026 墨言. All rights reserved."
+  },
+  "headerNav": [
+    {
+      "text": "首页/文章",
+      "url": "/"
+    },
+    {
+      "text": "分类",
+      "url": "/categories"
+    },
+    {
+      "text": "关于",
+      "url": "/about"
+    },
+    {
+      "text": "友情链接",
+      "url": "/friends"
+    }
+  ],
+  "footerNav": [
+    {
+      "text": "首页/文章",
+      "url": "/"
+    },
+    {
+      "text": "分类",
+      "url": "/categories"
+    },
+    {
+      "text": "关于",
+      "url": "/about"
+    },
+    {
+      "text": "友情链接",
+      "url": "/friends"
+    }
+  ],
+  "friends": [
+    {
+      "title": "张三的博客",
+      "url": "https://example.com",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=80&h=80&fit=crop"
+    },
+    {
+      "title": "李四的花园",
+      "url": "https://example.org",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop"
+    }
+  ]
+}

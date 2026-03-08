@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="文章分类 - 墨言博客">
+  <title>分类 | 墨言</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- 样式 -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* 分类页面特有样式 */
+    .categories-header {
+      text-align: center;
+      padding: calc(70px + 80px) 0 60px;
+      background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    }
+    
+    .categories-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+    }
+    
+    .categories-subtitle {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      font-weight: 300;
+    }
+    
+    /* 分类列表样式 */
+    .categories-container {
+      padding: 60px 0;
+    }
+    
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .category-card {
+      background: var(--color-bg-card);
+      border-radius: 12px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      border: 1px solid var(--color-border);
+    }
+    
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .category-name {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .category-count {
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+    
+    .category-description {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    
+    /* 分类详情页样式 */
+    .category-detail-header {
+      text-align: center;
+      padding: calc(70px + 60px) 0 40px;
+      background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    }
+    
+    .category-detail-name {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .category-detail-description {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      font-weight: 300;
+    }
+    
+    .back-to-categories {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+    
+    .back-to-categories:hover {
+      color: var(--color-text);
+    }
+    
+    /* 文章列表样式（复用首页样式） */
+    .category-posts {
+      padding: 40px 0 80px;
+    }
+    
+    /* 隐藏状态 */
+    .hidden {
+      display: none !important;
+    }
+    
+    /* 加载状态 */
+    .loading-state {
+      text-align: center;
+      padding: 100px 0;
+      color: var(--color-text-muted);
+    }
+    
+    /* 错误状态 */
+    .error-state {
+      text-align: center;
+      padding: 100px 0;
+      color: var(--color-text-muted);
+    }
+    
+    .error-state a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="logo">墨言</a>
+      
+      <ul class="nav-menu" id="navMenu">
+        <!-- 由 config-loader.js 动态渲染 -->
+      </ul>
+      
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 分类列表页面 -->
+  <div id="categoriesListPage">
+    <header class="categories-header">
+      <div class="container">
+        <h1 class="categories-title">文章分类</h1>
+        <p class="categories-subtitle">按主题浏览所有文章</p>
+      </div>
+    </header>
+
+    <main class="categories-container">
+      <div class="container">
+        <div class="categories-grid" id="categoriesGrid">
+          <!-- 由 category-loader.js 动态渲染 -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 分类详情页面 -->
+  <div id="categoryDetailPage" class="hidden">
+    <header class="category-detail-header">
+      <div class="container">
+        <h1 class="category-detail-name" id="categoryDetailName">分类名称</h1>
+        <p class="category-detail-description" id="categoryDetailDescription">分类描述</p>
+        <a href="./" class="back-to-categories">← 返回分类列表</a>
+      </div>
+    </header>
+
+    <main class="category-posts">
+      <div class="container">
+        <div class="content-wrapper" id="categoryPostList">
+          <!-- 由 category-loader.js 动态渲染 -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 加载状态 -->
+  <div id="loadingState" class="loading-state hidden">
+    <p>正在加载...</p>
+  </div>
+
+  <!-- 错误状态 -->
+  <div id="errorState" class="error-state hidden">
+    <p>加载失败，请稍后重试</p>
+    <a href="./">返回分类列表</a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">墨言</div>
+      <p class="footer-desc">
+        <!-- 由 config-loader.js 动态渲染 -->
+      </p>
+      <div class="footer-links">
+        <!-- 由 config-loader.js 动态渲染 -->
+      </div>
+      <div class="footer-divider"></div>
+      <p class="copyright"><!-- 由 config-loader.js 动态渲染 --></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/markdown.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/config-loader.js"></script>
+  <script src="../js/category-loader.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
