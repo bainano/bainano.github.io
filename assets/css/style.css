@@ -146,7 +146,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: 999px;
   transition: border-color 0.35s var(--ease-out), color 0.35s var(--ease-out), background 0.35s var(--ease-out);
 }
-.nav-cta .btn-arrow { width: 14px; height: 14px; }
+.nav-cta .btn-arrow {
+  width: 14px; height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-cta .btn-arrow svg { display: block; width: 100%; height: 100%; }
 .nav-cta:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
 
 /* ---------------- 通用按钮 ---------------- */
@@ -723,32 +730,18 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
   line-height: 1.9;
   font-weight: 300;
 }
-.contact-links {
-  margin-top: 34px;
+.contact-actions {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  gap: 30px;
-}
-.contact-links a {
-  position: relative;
-  display: inline-flex;
   align-items: center;
-  color: var(--ink-2);
-  font-size: 15px;
-  padding-bottom: 4px;
-  transition: color 0.3s var(--ease-out);
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.contact-links a:hover { color: var(--ink); }
-.link-underline {
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 100%; height: 1px;
-  background: var(--ink);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s var(--ease-out);
+.contact-actions .btn {
+  padding: 18px 32px;
+  font-size: 17px;
 }
-.contact-links a:hover .link-underline { transform: scaleX(1); transform-origin: left; }
 
 /* ---------------- 页脚 ---------------- */
 .footer {
