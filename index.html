@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白喃 · 独立开发者</title>
+<meta name="description" content="白喃，大学生独立开发者。专注于用 AI 工具打造好用、好看的产品。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 背景氛围层 -->
+<div class="bg" aria-hidden="true">
+  <div class="bg-glow bg-glow--orange"></div>
+  <div class="bg-glow bg-glow--blue"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<!-- 顶部导航 -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top">白喃</a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#works">作品</a>
+      <a href="#about">能力</a>
+      <a href="#contact">联系</a>
+    </nav>
+    <a class="nav-cta" href="#contact">
+      <span class="btn-label">一起做点东西</span>
+      <span class="btn-arrow" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero 品牌宣言 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal">你好，我是白喃</p>
+      <h1 class="hero-title reveal">
+        把想法<br>
+        做成<span class="hl">有用的产品</span>
+      </h1>
+      <p class="hero-sub reveal">
+        一名大学生独立开发者。平时用 AI 工具做自己用的东西，
+        也做一点开源。喜欢把复杂的技术收敛成简单、安静的界面。
+      </p>
+      <div class="hero-actions reveal">
+        <a class="btn btn--primary" href="#works">
+          <span class="btn-label">看看我在做什么</span>
+          <span class="btn-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a class="btn btn--ghost" href="#contact">
+          <span class="btn-label">找我聊聊</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="hero-scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- 精选作品 -->
+  <section class="section works" id="works">
+    <div class="section-head reveal">
+      <h2 class="section-title">精选作品</h2>
+      <p class="section-note">最近在做的东西，还有正在酝酿的。</p>
+    </div>
+
+    <article class="work-card work-card--music reveal">
+      <div class="work-visual" aria-hidden="true">
+        <div class="art art--music">
+          <div class="art-window">
+            <div class="art-sidebar">
+              <span class="art-dot"></span>
+              <span class="art-dot"></span>
+              <span class="art-dot"></span>
+              <span class="art-line"></span>
+              <span class="art-line"></span>
+            </div>
+            <div class="art-main">
+              <div class="art-cover">
+                <div class="art-cover-grad"></div>
+                <div class="art-disc"></div>
+              </div>
+              <div class="art-now">
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+                <span class="art-now-bar"></span>
+              </div>
+              <div class="art-play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.8v12.4c0 .8.9 1.3 1.6.9l9.6-6.2c.6-.4.6-1.4 0-1.8L9.6 4.9c-.7-.4-1.6.1-1.6.9Z"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="art-ring art-ring--a"></span>
+          <span class="art-ring art-ring--b"></span>
+          <span class="art-note art-note--1"></span>
+          <span class="art-note art-note--2"></span>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-meta">
+          <span class="work-tag">桌面端 · 音乐</span>
+          <span class="work-status">进行中</span>
+        </div>
+        <h3 class="work-title">酷狗音乐概念版</h3>
+        <p class="work-desc">
+          对现有音乐客户端的一次重新思考。去掉臃肿的导航和营销位，
+          把「听歌」这件核心的事做到干净、沉浸。基于第三方 API 自建数据层，
+          前端负责把体验做到位。
+        </p>
+        <ul class="work-tech">
+          <li>React</li>
+          <li>Vite</li>
+          <li>TypeScript</li>
+          <li>Node.js</li>
+        </ul>
+        <a class="work-link" href="https://github.com/bainano" target="_blank" rel="noopener">
+          <span class="btn-label">了解这个项目</span>
+          <span class="btn-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+    <article class="work-card work-card--pill reveal">
+      <div class="work-visual" aria-hidden="true">
+        <div class="art art--pill">
+          <div class="art-pill">
+            <div class="art-pill-cap art-pill-cap--left"></div>
+            <div class="art-pill-core">
+              <span class="art-pill-line"></span>
+              <span class="art-pill-line art-pill-line--s"></span>
+            </div>
+            <div class="art-pill-cap art-pill-cap--right"></div>
+          </div>
+          <span class="art-pill-spark art-pill-spark--1"></span>
+          <span class="art-pill-spark art-pill-spark--2"></span>
+          <span class="art-pill-spark art-pill-spark--3"></span>
+          <span class="art-pill-spark art-pill-spark--4"></span>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-meta">
+          <span class="work-tag">效率 · 灵感</span>
+          <span class="work-status work-status--plan">规划中</span>
+        </div>
+        <h3 class="work-title">闪念胶囊</h3>
+        <p class="work-desc">
+          灵感常常一闪而过。想做一个几乎不打扰人的速记工具：
+          随手丢进一句话，自动归拢、按需提醒，让想法不至于被忘记。
+        </p>
+        <ul class="work-tech">
+          <li>正在规划</li>
+          <li>待定栈</li>
+        </ul>
+        <span class="work-link work-link--disabled">
+          <span class="btn-label">值得期待</span>
+        </span>
+      </div>
+    </article>
+
+    <article class="work-card work-card--gh reveal">
+      <div class="work-body">
+        <div class="work-meta">
+          <span class="work-tag">开源</span>
+        </div>
+        <h3 class="work-title">GitHub 上的其它尝试</h3>
+        <p class="work-desc">
+          一些小项目、小脚本和实验代码都会放在 GitHub 上，
+          目前没有太多热度，但每个都代表一次认真尝试。
+        </p>
+        <a class="work-link" href="https://github.com/bainano" target="_blank" rel="noopener">
+          <span class="btn-label">逛逛我的主页</span>
+          <span class="btn-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- 能力经验 -->
+  <section class="section about" id="about">
+    <div class="section-head reveal">
+      <h2 class="section-title">能力与经验</h2>
+      <p class="section-note">一个人也能把产品从想法做到上线。</p>
+    </div>
+
+    <div class="about-cols">
+      <div class="about-card reveal">
+        <h3 class="about-card-title">界面与体验</h3>
+        <p class="about-card-desc">React、Vite、TypeScript 与样式系统。在意排版、动效和那些别人不会注意到的细节。</p>
+      </div>
+      <div class="about-card reveal">
+        <h3 class="about-card-title">服务与数据</h3>
+        <p class="about-card-desc">Node.js、Express，以及各种 API 的对接与适配。能独立打通产品前后端。</p>
+      </div>
+      <div class="about-card reveal">
+        <h3 class="about-card-title">用 AI 造物</h3>
+        <p class="about-card-desc">不会写代码也能开发产品？我习惯把 AI 当成高效的工程伙伴，用它加速设计、编码与排错。</p>
+      </div>
+      <div class="about-card reveal">
+        <h3 class="about-card-title">桌面化探索</h3>
+        <p class="about-card-desc">正在把 Web 应用打包为 Electron 桌面应用，让产品拥有更完整的独立形态。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式 -->
+  <section class="section contact" id="contact">
+    <div class="contact-panel reveal">
+      <p class="contact-eyebrow">保持联系</p>
+      <h2 class="contact-title">如果你也有一个<br>想做出来的东西</h2>
+      <p class="contact-sub">
+        无论是产品合作、开源交流，还是只想聊聊想法，
+        都欢迎给我写信。我通常会很快回复。
+      </p>
+      <a class="btn btn--primary btn--mail" href="mailto:2066856271@qq.com">
+        <span class="btn-label">2066856271@qq.com</span>
+        <span class="btn-arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <div class="contact-links">
+        <a href="https://github.com/bainano" target="_blank" rel="noopener">
+          <span class="btn-label">GitHub</span>
+          <span class="link-underline" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 白喃</span>
+    <span class="footer-made">用 AI 辅助设计并开发</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
